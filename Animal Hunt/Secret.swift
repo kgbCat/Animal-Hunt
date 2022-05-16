@@ -9,7 +9,6 @@ import Foundation
 
 class Secret {
     
-//    static let listCell = "listCell"
     static let shared = Secret(secretWord: "" )
 
     var secretWord: String

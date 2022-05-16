@@ -39,6 +39,7 @@
 		0AC77E08281B433D006657ED /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77E07281B433D006657ED /* ImagePredictor.swift */; };
 		0AC77E0B281B4790006657ED /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77E0A281B4790006657ED /* VNClassificationObservation+confidenceString.swift */; };
 		0AC77E0E281B868B006657ED /* PhotoViewController+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77E0D281B868B006657ED /* PhotoViewController+CameraPicker.swift */; };
+		0AE8168328322F8000E0E2F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8168228322F8000E0E2F1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		0AC77E07281B433D006657ED /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		0AC77E0A281B4790006657ED /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
 		0AC77E0D281B868B006657ED /* PhotoViewController+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoViewController+CameraPicker.swift"; sourceTree = "<group>"; };
+		0AE8168228322F8000E0E2F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				0AC77DE12818E0DB006657ED /* AppDelegate.swift */,
 				0AC77DE32818E0DB006657ED /* SceneDelegate.swift */,
 				0AC434B32821DE0A001EE75F /* Secret.swift */,
+				0AE8168228322F8000E0E2F1 /* Constants.swift */,
 				0AC77DFD281B2D46006657ED /* Model */,
 				0AC77DFE281B2D56006657ED /* View */,
 				0AC77DFF281B2D5D006657ED /* Presenter */,
@@ -302,6 +305,7 @@
 				0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */,
 				0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */,
 				0AC77E02281B2DE8006657ED /* DrawingViewController.swift in Sources */,
+				0AE8168328322F8000E0E2F1 /* Constants.swift in Sources */,
 				0A3A8C8A282C8B400053FBB5 /* RegisterPresenter.swift in Sources */,
 				0A0A34D62830F17E00CC2308 /* ProfileViewController+CameraPicker.swift in Sources */,
 				0AC77DE22818E0DB006657ED /* AppDelegate.swift in Sources */,
