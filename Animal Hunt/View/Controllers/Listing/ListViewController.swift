@@ -27,7 +27,6 @@ final class ListViewController: UIViewController {
     // MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "My Animals"
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -69,8 +68,6 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        let item = animals[indexPath.row]
-//        guard let imgData = item.image else { return }
-//        let image = UIImage(data: imgData)
         // navigate to animal info page and pass data
 
 

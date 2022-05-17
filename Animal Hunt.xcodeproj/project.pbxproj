@@ -23,6 +23,8 @@
 		0AC434B12821D986001EE75F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434AF2821D986001EE75F /* TableViewCell.swift */; };
 		0AC434B22821D986001EE75F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC434B02821D986001EE75F /* TableViewCell.xib */; };
 		0AC434B42821DE0A001EE75F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434B32821DE0A001EE75F /* Secret.swift */; };
+		0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451AF2833554A0099F0BE /* CanvasView.swift */; };
+		0AC451B5283355C50099F0BE /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451B4283355C50099F0BE /* Touch.swift */; };
 		0AC77DE22818E0DB006657ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE12818E0DB006657ED /* AppDelegate.swift */; };
 		0AC77DE42818E0DB006657ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE32818E0DB006657ED /* SceneDelegate.swift */; };
 		0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE52818E0DB006657ED /* PhotoViewController.swift */; };
@@ -59,6 +61,8 @@
 		0AC434AF2821D986001EE75F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0AC434B02821D986001EE75F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		0AC434B32821DE0A001EE75F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		0AC451AF2833554A0099F0BE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		0AC451B4283355C50099F0BE /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
 		0AC77DDE2818E0DB006657ED /* Animal Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animal Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC77DE12818E0DB006657ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC77DE32818E0DB006657ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +134,32 @@
 			path = Listing;
 			sourceTree = "<group>";
 		};
+		0AC451B1283355500099F0BE /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				0AC77E01281B2DE8006657ED /* DrawingViewController.swift */,
+				0AC451AF2833554A0099F0BE /* CanvasView.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		0AC451B2283355A20099F0BE /* Prediction */ = {
+			isa = PBXGroup;
+			children = (
+				0AC77E03281B2E27006657ED /* SqueezeNet.mlmodel */,
+				0AC77E05281B42C7006657ED /* Prediction.swift */,
+			);
+			path = Prediction;
+			sourceTree = "<group>";
+		};
+		0AC451B3283355AD0099F0BE /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				0AC451B4283355C50099F0BE /* Touch.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
 		0AC77DD52818E0DB006657ED = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +199,8 @@
 		0AC77DFD281B2D46006657ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0AC77E03281B2E27006657ED /* SqueezeNet.mlmodel */,
-				0AC77E05281B42C7006657ED /* Prediction.swift */,
+				0AC451B3283355AD0099F0BE /* Drawing */,
+				0AC451B2283355A20099F0BE /* Prediction */,
 				0A3A8C9C282CB3B40053FBB5 /* CoreData */,
 			);
 			path = Model;
@@ -206,7 +236,7 @@
 				0A0A34D72830F19F00CC2308 /* Profile */,
 				0AC77E0C281B8662006657ED /* Photo Hunt */,
 				0AC434AE2821D95E001EE75F /* Listing */,
-				0AC77E01281B2DE8006657ED /* DrawingViewController.swift */,
+				0AC451B1283355500099F0BE /* Drawing */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +332,7 @@
 			files = (
 				0AC77E0E281B868B006657ED /* PhotoViewController+CameraPicker.swift in Sources */,
 				0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */,
+				0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */,
 				0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */,
 				0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */,
 				0AC77E02281B2DE8006657ED /* DrawingViewController.swift in Sources */,
@@ -315,6 +346,7 @@
 				0A79161D282F95C100672F11 /* Animal+CoreDataProperties.swift in Sources */,
 				0A79161C282F95C100672F11 /* Animal+CoreDataClass.swift in Sources */,
 				0A3A8C9E282CDA840053FBB5 /* CoreDataPresenter.swift in Sources */,
+				0AC451B5283355C50099F0BE /* Touch.swift in Sources */,
 				0AC77DFC2819F5EC006657ED /* RegisterViewController.swift in Sources */,
 				0AC77E0B281B4790006657ED /* VNClassificationObservation+confidenceString.swift in Sources */,
 				0AC77E08281B433D006657ED /* ImagePredictor.swift in Sources */,
