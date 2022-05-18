@@ -7,43 +7,27 @@
 
 import UIKit
 
-class CoreDataPresenter{
+class CoreDataHelper{
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    func isUserExist(secretWord: String) -> Bool {
-        var isChecked = false
-        do {
-            let users = try context.fetch(User.fetchRequest())
-            users.forEach { [weak self] user in
-                guard self != nil else { return }
-                if user.secretWord == secretWord {
-                    isChecked.toggle()
-                }
-            }
-        } catch {
-            // error
-        }
-        return isChecked
-    }
-
     func getUser(secretWord: String) -> User? {
-        var checkedUser: User?
+        var returnedUser: User?
         do {
             let users = try context.fetch(User.fetchRequest())
             users.forEach { [weak self] user in
                 guard self != nil else { return }
                 if user.secretWord == secretWord {
-                    checkedUser = user
+                    returnedUser = user
                 } else {
                     // ALERT
+                    returnedUser = nil
                 }
             }
-            return checkedUser
         } catch {
             // error
-            return nil
         }
+        return returnedUser
     }
 
     func createUser(name: String,
@@ -63,7 +47,7 @@ class CoreDataPresenter{
         }
     }
 
-    func deleteItem(user: User) {
+    func deleteUser(user: User) {
         context.delete(user)
 
         do {
@@ -74,7 +58,7 @@ class CoreDataPresenter{
         }
     }
 
-    func updateItem(user:  User,
+    func updateUser(user:  User,
                     newName: String,
                     newSecretWord: String,
                     newGoal: String,
@@ -93,18 +77,25 @@ class CoreDataPresenter{
 
 }
 
-extension CoreDataPresenter {
-    
-    func getAllitems() -> [Animal]?  {
-        
+extension CoreDataHelper {
+
+    func getAnimals(user: User) -> [Animal]? {
+        var animals = [Animal]()
         do {
-            let items = try context.fetch(Animal.fetchRequest())
-            return items
+            let users = try context.fetch(User.fetchRequest())
+            users.forEach { person in
+                if person == user {
+                    if let values =  person.animals?.allObjects as? [Animal] {
+                        animals = values
+                    }
+                }
+            }
         } catch {
             // error
-            return nil
         }
+        return animals
     }
+
 
     func createAnimal(name: String, image: Data, user:  User) {
         let animal = Animal(context: context)

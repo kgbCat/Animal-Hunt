@@ -9,8 +9,11 @@ import UIKit
 
 
 class RegisterViewController: UIViewController {
+
+
     //MARK: Private Properties
-    private var presenter: RegisterPrsenter?
+    var presenter: RegisterPrsenter?
+
     var isFilled = false
 
     //MARK: IBOutlets
@@ -24,7 +27,7 @@ class RegisterViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true);
+//        self.navigationItem.setHidesBackButton(true, animated: true);
         presenter = RegisterPrsenter()
         configureTextFields()
         presenter?.setProfileImageView(image: profileImageView)

@@ -8,10 +8,9 @@
 import UIKit
 
 
-class RegisterPrsenter {
+class RegisterPrsenter: UIViewController{
 
-    private let coreData = CoreDataPresenter()
-
+    private let coreData = CoreDataHelper()
 
     public func registerNewHunter(name: String, word: String, goal: String, photo: UIImage ) {
         if let imgData = photo.pngData() {

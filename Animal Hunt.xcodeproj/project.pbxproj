@@ -10,12 +10,12 @@
 		0A0A34D32830A69900CC2308 /* RegisterViewController+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A34D22830A69900CC2308 /* RegisterViewController+CameraPicker.swift */; };
 		0A0A34D62830F17E00CC2308 /* ProfileViewController+CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A34D52830F17E00CC2308 /* ProfileViewController+CameraPicker.swift */; };
 		0A3A8C8A282C8B400053FBB5 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C89282C8B400053FBB5 /* RegisterPresenter.swift */; };
-		0A3A8C8C282C8B4E0053FBB5 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C8B282C8B4E0053FBB5 /* MainPresenter.swift */; };
+		0A3A8C8C282C8B4E0053FBB5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C8B282C8B4E0053FBB5 /* LoginPresenter.swift */; };
 		0A3A8C90282C8B7F0053FBB5 /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C8F282C8B7F0053FBB5 /* DrawingPresenter.swift */; };
 		0A3A8C92282C8B900053FBB5 /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C91282C8B900053FBB5 /* ProfilePresenter.swift */; };
 		0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */; };
 		0A3A8C97282CA7B10053FBB5 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C95282CA7B10053FBB5 /* CoreData.xcdatamodeld */; };
-		0A3A8C9E282CDA840053FBB5 /* CoreDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C9D282CDA840053FBB5 /* CoreDataPresenter.swift */; };
+		0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */; };
 		0A79161A282F95C100672F11 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791616282F95C100672F11 /* User+CoreDataClass.swift */; };
 		0A79161B282F95C100672F11 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791617282F95C100672F11 /* User+CoreDataProperties.swift */; };
 		0A79161C282F95C100672F11 /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791618282F95C100672F11 /* Animal+CoreDataClass.swift */; };
@@ -33,7 +33,7 @@
 		0AC77DEE2818E0DC006657ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC77DEC2818E0DC006657ED /* LaunchScreen.storyboard */; };
 		0AC77DF628190105006657ED /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DF528190105006657ED /* ProfileViewController.swift */; };
 		0AC77DF828190148006657ED /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DF728190148006657ED /* ListViewController.swift */; };
-		0AC77DFA2819F5C5006657ED /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DF92819F5C5006657ED /* MainViewController.swift */; };
+		0AC77DFA2819F5C5006657ED /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DF92819F5C5006657ED /* LoginViewController.swift */; };
 		0AC77DFC2819F5EC006657ED /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DFB2819F5EC006657ED /* RegisterViewController.swift */; };
 		0AC77E02281B2DE8006657ED /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77E01281B2DE8006657ED /* DrawingViewController.swift */; };
 		0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77E03281B2E27006657ED /* SqueezeNet.mlmodel */; };
@@ -48,12 +48,12 @@
 		0A0A34D22830A69900CC2308 /* RegisterViewController+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+CameraPicker.swift"; sourceTree = "<group>"; };
 		0A0A34D52830F17E00CC2308 /* ProfileViewController+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+CameraPicker.swift"; sourceTree = "<group>"; };
 		0A3A8C89282C8B400053FBB5 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
-		0A3A8C8B282C8B4E0053FBB5 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		0A3A8C8B282C8B4E0053FBB5 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		0A3A8C8F282C8B7F0053FBB5 /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
 		0A3A8C91282C8B900053FBB5 /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
 		0A3A8C96282CA7B10053FBB5 /* Animal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Animal.xcdatamodel; sourceTree = "<group>"; };
-		0A3A8C9D282CDA840053FBB5 /* CoreDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPresenter.swift; sourceTree = "<group>"; };
+		0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		0A791616282F95C100672F11 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0A791617282F95C100672F11 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0A791618282F95C100672F11 /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		0AC77DEF2818E0DC006657ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0AC77DF528190105006657ED /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0AC77DF728190148006657ED /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		0AC77DF92819F5C5006657ED /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0AC77DF92819F5C5006657ED /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AC77DFB2819F5EC006657ED /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AC77E01281B2DE8006657ED /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		0AC77E03281B2E27006657ED /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
@@ -100,6 +100,7 @@
 			children = (
 				0AC77DFB2819F5EC006657ED /* RegisterViewController.swift */,
 				0A0A34D22830A69900CC2308 /* RegisterViewController+CameraPicker.swift */,
+				0A3A8C89282C8B400053FBB5 /* RegisterPresenter.swift */,
 			);
 			name = Register;
 			sourceTree = "<group>";
@@ -109,6 +110,7 @@
 			children = (
 				0AC77DF528190105006657ED /* ProfileViewController.swift */,
 				0A0A34D52830F17E00CC2308 /* ProfileViewController+CameraPicker.swift */,
+				0A3A8C91282C8B900053FBB5 /* ProfilePresenter.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 			children = (
 				0AC77E01281B2DE8006657ED /* DrawingViewController.swift */,
 				0AC451AF2833554A0099F0BE /* CanvasView.swift */,
+				0A3A8C8F282C8B7F0053FBB5 /* DrawingPresenter.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -182,10 +185,10 @@
 				0AC77DE12818E0DB006657ED /* AppDelegate.swift */,
 				0AC77DE32818E0DB006657ED /* SceneDelegate.swift */,
 				0AC434B32821DE0A001EE75F /* Secret.swift */,
+				0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */,
 				0AE8168228322F8000E0E2F1 /* Constants.swift */,
 				0AC77DFD281B2D46006657ED /* Model */,
 				0AC77DFE281B2D56006657ED /* View */,
-				0AC77DFF281B2D5D006657ED /* Presenter */,
 				0AC77E09281B471F006657ED /* Extensions */,
 				0AC77DE72818E0DB006657ED /* Main.storyboard */,
 				0AC77DEA2818E0DC006657ED /* Assets.xcassets */,
@@ -214,24 +217,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0AC77DFF281B2D5D006657ED /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				0A3A8C8B282C8B4E0053FBB5 /* MainPresenter.swift */,
-				0AC77E07281B433D006657ED /* ImagePredictor.swift */,
-				0A3A8C89282C8B400053FBB5 /* RegisterPresenter.swift */,
-				0A3A8C8F282C8B7F0053FBB5 /* DrawingPresenter.swift */,
-				0A3A8C91282C8B900053FBB5 /* ProfilePresenter.swift */,
-				0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */,
-				0A3A8C9D282CDA840053FBB5 /* CoreDataPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		0AC77E00281B2D71006657ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				0AC77DF92819F5C5006657ED /* MainViewController.swift */,
+				0AC77DF92819F5C5006657ED /* LoginViewController.swift */,
+				0A3A8C8B282C8B4E0053FBB5 /* LoginPresenter.swift */,
 				0A0A34D42830F12100CC2308 /* Register */,
 				0A0A34D72830F19F00CC2308 /* Profile */,
 				0AC77E0C281B8662006657ED /* Photo Hunt */,
@@ -254,6 +244,8 @@
 			children = (
 				0AC77DE52818E0DB006657ED /* PhotoViewController.swift */,
 				0AC77E0D281B868B006657ED /* PhotoViewController+CameraPicker.swift */,
+				0AC77E07281B433D006657ED /* ImagePredictor.swift */,
+				0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */,
 			);
 			path = "Photo Hunt";
 			sourceTree = "<group>";
@@ -345,14 +337,14 @@
 				0A79161B282F95C100672F11 /* User+CoreDataProperties.swift in Sources */,
 				0A79161D282F95C100672F11 /* Animal+CoreDataProperties.swift in Sources */,
 				0A79161C282F95C100672F11 /* Animal+CoreDataClass.swift in Sources */,
-				0A3A8C9E282CDA840053FBB5 /* CoreDataPresenter.swift in Sources */,
+				0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */,
 				0AC451B5283355C50099F0BE /* Touch.swift in Sources */,
 				0AC77DFC2819F5EC006657ED /* RegisterViewController.swift in Sources */,
 				0AC77E0B281B4790006657ED /* VNClassificationObservation+confidenceString.swift in Sources */,
 				0AC77E08281B433D006657ED /* ImagePredictor.swift in Sources */,
 				0AC77DF628190105006657ED /* ProfileViewController.swift in Sources */,
-				0A3A8C8C282C8B4E0053FBB5 /* MainPresenter.swift in Sources */,
-				0AC77DFA2819F5C5006657ED /* MainViewController.swift in Sources */,
+				0A3A8C8C282C8B4E0053FBB5 /* LoginPresenter.swift in Sources */,
+				0AC77DFA2819F5C5006657ED /* LoginViewController.swift in Sources */,
 				0AC77DF828190148006657ED /* ListViewController.swift in Sources */,
 				0A79161A282F95C100672F11 /* User+CoreDataClass.swift in Sources */,
 				0A3A8C92282C8B900053FBB5 /* ProfilePresenter.swift in Sources */,
@@ -510,9 +502,11 @@
 				DEVELOPMENT_TEAM = ZHUTRQ83V7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Animal Hunt/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is absolutly needed!";
+				INFOPLIST_KEY_NSMainNibFile = Main;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " We need your permission to access photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
@@ -539,9 +533,11 @@
 				DEVELOPMENT_TEAM = ZHUTRQ83V7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Animal Hunt/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is absolutly needed!";
+				INFOPLIST_KEY_NSMainNibFile = Main;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " We need your permission to access photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;

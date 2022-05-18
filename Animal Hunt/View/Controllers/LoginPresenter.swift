@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MainPresenter {
+class LoginPresenter {
 
-    private let coreData = CoreDataPresenter()
+    private let coreData = CoreDataHelper()
 
+    public func checkUser(word: String) -> User?{
+        coreData.getUser(secretWord: word)
 
-    public func checkUser(word: String) -> Bool {
-        coreData.isUserExist(secretWord: word) ? true : false
     }
 
     public func buttonIsdesabled( button: UIButton) {

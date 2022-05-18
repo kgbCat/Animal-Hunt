@@ -19,17 +19,19 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ProfilePresenter()
-        presenter?.getUserInfo(Secret.shared.secretWord)
-        presenter?.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
+//        presenter?.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        presenter?.getUserInfo(Secret.shared.secretWord)
         presenter?.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
     }
 
     @IBAction func didTapImageView(_ sender: UITapGestureRecognizer) {
         launchCamera()
+    }
+
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
+
     }
 
     private func launchCamera() {
@@ -44,9 +46,9 @@ class ProfileViewController: UIViewController {
 
     func userSelectedPhoto(photo: UIImage) {
         updateImage(photo)
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.saveImage(photo)
-        }
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            self.saveImage(photo)
+//        }
     }
 
     private func updateImage(_ image: UIImage) {
@@ -58,7 +60,8 @@ class ProfileViewController: UIViewController {
     private func saveImage(_ image: UIImage) {
         // save to core data
         print("saved")
-        presenter?.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
+        presenter?.saveImageToCoreData(image)
+
     }
 
 }

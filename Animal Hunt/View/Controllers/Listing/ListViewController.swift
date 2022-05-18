@@ -7,10 +7,10 @@
 
 import UIKit
 
-final class ListViewController: UIViewController {
+final class ListViewController: UIViewController, TableViewCellDelegate {
 
     // MARK: Private properties
-    private let coreData = CoreDataPresenter()
+    private let coreData = CoreDataHelper()
     private var animals:[Animal] = []
     private let cellID = String(describing: TableViewCell.self)
 
@@ -39,7 +39,7 @@ final class ListViewController: UIViewController {
 
     // MARK: Private Methods
     private func getItems() {
-        if let items = coreData.getAllitems() {
+        if let items = coreData.getAnimals(user: Secret.shared.user ) {
             self.animals = items
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -60,7 +60,15 @@ extension ListViewController: UITableViewDataSource {
         else { return UITableViewCell() }
 
         cell.configure(animal: animals[indexPath.row])
+        cell.delegate = self
         return cell
+    }
+
+    func onDrawingScene() {
+        guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController else { return }
+
+        navigationController?.pushViewController(drawingViewController, animated: true)
+
     }
 }
 

@@ -38,7 +38,7 @@ class PhotoViewController: UIViewController {
     }
 
     @IBAction func addDataList(_ sender: UIButton) {
-        presenter?.addToDatabase(name, imageView.image)
+        presenter?.addToDatabase(name.uppercased(), imageView.image)
         presentAlert()
     }
 
@@ -76,8 +76,7 @@ extension PhotoViewController {
 
     /// Updates the storyboard's prediction label.
     func updatePredictionLabel(_ message: String) {
-        DispatchQueue.main.async {
-            self.predictionLabel.text = message
+        DispatchQueue.main.async {            self.predictionLabel.text = message
         }
 
         if firstRun {

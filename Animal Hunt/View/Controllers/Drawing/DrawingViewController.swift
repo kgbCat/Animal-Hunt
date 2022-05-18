@@ -28,18 +28,24 @@ final class DrawingViewController: UIViewController {
 
 
     @IBAction func undoBtnTapped(_ sender: UIButton) {
+        canvasView.unDo()
     }
 
     @IBAction func widthSliderChanched(_ sender: UISlider) {
+        canvasView.strokeWidth = CGFloat(sender.value)
+
     }
 
     @IBAction func opacitySliderChanged(_ sender: UISlider) {
+        canvasView.strokeOpacity = CGFloat(sender.value)
     }
 
     @IBAction func resetTapped(_ sender: UIButton) {
+        canvasView.clearCanvas()
     }
 
     @IBAction func saveTapped(_ sender: UIButton) {
+        // save to data base
     }
 
 }
@@ -56,6 +62,10 @@ extension DrawingViewController: UICollectionViewDataSource, UICollectionViewDel
             view.layer.cornerRadius = 3
         }
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        canvasView.strokeColor = colors[indexPath.row]
     }
 
 

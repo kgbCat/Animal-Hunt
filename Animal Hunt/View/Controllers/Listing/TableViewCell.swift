@@ -7,16 +7,29 @@
 
 import UIKit
 
+protocol TableViewCellDelegate: AnyObject {
+    func onDrawingScene()
+}
+
 final class TableViewCell: UITableViewCell {
+
+    weak var delegate: TableViewCellDelegate?
 
     //MARK: IBOutlets
     @IBOutlet weak var animalImage: UIImageView! {
         didSet{
-            animalImage.layer.cornerRadius = animalImage.frame.size.height / 2
+            animalImage.layer.cornerRadius = 6
             animalImage.clipsToBounds = true
         }
     }
     @IBOutlet weak var predictionLabel: UILabel!
+
+
+    @IBAction func onDrawSceneTapped(_ sender: UIButton) {
+        if let delegate = delegate {
+            delegate.onDrawingScene()
+        }
+    }
 
 
     func configure(animal: Animal) {

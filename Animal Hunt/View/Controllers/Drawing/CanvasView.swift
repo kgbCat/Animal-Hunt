@@ -10,6 +10,9 @@ import UIKit
 class CanvasView: UIView {
 
     var lines = [Touch]()
+    var strokeWidth: CGFloat = 1.0
+    var strokeOpacity: CGFloat = 1.0
+    var strokeColor: UIColor = .black
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -39,13 +42,23 @@ class CanvasView: UIView {
         guard let touch = touches.first?.location(in: nil) else { return }
         guard var lastPoint = lines.popLast() else { return }
         lastPoint.points?.append(touch)
-        lastPoint.color = .green
-        lastPoint.width = 5
-        lastPoint.opacity = 1.0
+        lastPoint.color = strokeColor
+        lastPoint.width = strokeWidth
+        lastPoint.opacity = strokeOpacity
         lines.append(lastPoint)
         setNeedsDisplay()
 
     }
 
+    func clearCanvas() {
+        lines.removeAll()
+        setNeedsDisplay()
+    }
 
+    func unDo() {
+        if lines.count > 0 {
+            lines.removeLast()
+            setNeedsDisplay()
+        }
+    }
 }

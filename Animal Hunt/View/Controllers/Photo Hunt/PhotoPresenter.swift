@@ -9,14 +9,13 @@ import Foundation
 import UIKit
 
 class PhotoPresenter {
-    private let coreData = CoreDataPresenter()
+    private let coreData = CoreDataHelper()
 
     func addToDatabase(_ name: String?, _ image: UIImage?) {
         guard let name = name,
-              let pngImage = image?.pngData(),
-              let user = coreData.getUser(secretWord: Secret.shared.secretWord)
+              let pngImage = image?.pngData()
         else { return }
         coreData
-            .createAnimal(name: name, image: pngImage, user: user)
+            .createAnimal(name: name, image: pngImage, user: Secret.shared.user)
     }
 }

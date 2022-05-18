@@ -9,12 +9,12 @@ import Foundation
 
 class Secret {
     
-    static let shared = Secret(secretWord: "" )
+    static let shared = Secret(user: User())
 
-    var secretWord: String
+    var user: User
 
-    private init(secretWord: String) {
-        self.secretWord = secretWord
+    private init(user: User) {
+        self.user = user
     }
 
 }
