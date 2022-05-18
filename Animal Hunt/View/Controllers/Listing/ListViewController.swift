@@ -11,6 +11,7 @@ final class ListViewController: UIViewController, TableViewCellDelegate {
 
     // MARK: Private properties
     private let coreData = CoreDataHelper()
+    private var presenter: ListPresenter?
     private var animals:[Animal] = []
     private let cellID = String(describing: TableViewCell.self)
 
@@ -27,6 +28,7 @@ final class ListViewController: UIViewController, TableViewCellDelegate {
     // MARK: Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = ListPresenter()
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -39,11 +41,9 @@ final class ListViewController: UIViewController, TableViewCellDelegate {
 
     // MARK: Private Methods
     private func getItems() {
-        if let items = coreData.getAnimals(user: Secret.shared.user ) {
-            self.animals = items
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        self.animals = presenter?.getAnimals(Secret.shared.user ) ?? [Animal]()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -65,9 +65,8 @@ extension ListViewController: UITableViewDataSource {
     }
 
     func onDrawingScene() {
-        guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController else { return }
-
-        navigationController?.pushViewController(drawingViewController, animated: true)
+        // TODO:
+        // do something with like button 
 
     }
 }
@@ -75,10 +74,9 @@ extension ListViewController: UITableViewDataSource {
     //MARK: UITableViewDelegate
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let item = animals[indexPath.row]
-        // navigate to animal info page and pass data
+        guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController else { return }
 
-
+        navigationController?.pushViewController(drawingViewController, animated: true)
     }
 
     func tableView(_ tableView: UITableView,
@@ -120,11 +118,9 @@ extension ListViewController {
 
     private func handleMovetoDelete(item: Animal) {
         // alert ( Are you sure you want to delete it? You can not restore it back)
-        let alert = UIAlertController(title: nil,
-                                      message: "Are you sure you want to delete it? You can not restore it back",
-                                      preferredStyle: .alert)
+        guard let alert = presenter?.presentDeleteAlert() else { return }
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            self?.coreData.deleteItem(item: item)
+            self?.presenter?.deleteAnimal(item)
             self?.getItems()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -133,9 +129,8 @@ extension ListViewController {
 
     private func handleMovetoEdit(item: Animal) {
         // alert to edit name
-        let alert = UIAlertController(title: "New Name",
-                                      message: "Enter new name",
-                                      preferredStyle: .alert)
+        guard let alert = presenter?.presentEditAlert() else { return }
+
         alert.addTextField()
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak self] _ in
@@ -145,7 +140,7 @@ extension ListViewController {
             else {
                 return
             }
-            self?.coreData.updateItem(item: item, newName: name )
+            self?.presenter?.updateAnimal(item: item, newName: name)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }

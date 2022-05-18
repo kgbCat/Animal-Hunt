@@ -25,6 +25,7 @@
 		0AC434B42821DE0A001EE75F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434B32821DE0A001EE75F /* Secret.swift */; };
 		0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451AF2833554A0099F0BE /* CanvasView.swift */; };
 		0AC451B5283355C50099F0BE /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451B4283355C50099F0BE /* Touch.swift */; };
+		0AC451BA28351DE20099F0BE /* List Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451B928351DE20099F0BE /* List Presenter.swift */; };
 		0AC77DE22818E0DB006657ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE12818E0DB006657ED /* AppDelegate.swift */; };
 		0AC77DE42818E0DB006657ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE32818E0DB006657ED /* SceneDelegate.swift */; };
 		0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC77DE52818E0DB006657ED /* PhotoViewController.swift */; };
@@ -63,6 +64,7 @@
 		0AC434B32821DE0A001EE75F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		0AC451AF2833554A0099F0BE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		0AC451B4283355C50099F0BE /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
+		0AC451B928351DE20099F0BE /* List Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List Presenter.swift"; sourceTree = "<group>"; };
 		0AC77DDE2818E0DB006657ED /* Animal Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animal Hunt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC77DE12818E0DB006657ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC77DE32818E0DB006657ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC77DF728190148006657ED /* ListViewController.swift */,
+				0AC451B928351DE20099F0BE /* List Presenter.swift */,
 				0AC434AF2821D986001EE75F /* TableViewCell.swift */,
 				0AC434B02821D986001EE75F /* TableViewCell.xib */,
 			);
@@ -325,6 +328,7 @@
 				0AC77E0E281B868B006657ED /* PhotoViewController+CameraPicker.swift in Sources */,
 				0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */,
 				0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */,
+				0AC451BA28351DE20099F0BE /* List Presenter.swift in Sources */,
 				0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */,
 				0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */,
 				0AC77E02281B2DE8006657ED /* DrawingViewController.swift in Sources */,
