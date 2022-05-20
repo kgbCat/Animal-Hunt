@@ -34,25 +34,25 @@
                         </constraints>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAY-IF-VXB">
-                        <rect key="frame" x="23" y="340" width="254" height="34"/>
+                        <rect key="frame" x="23" y="340" width="254" height="31"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction goes there" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKB-Jv-wS3">
-                                <rect key="frame" x="0.0" y="0.0" width="208" height="34"/>
+                                <rect key="frame" x="0.0" y="0.0" width="208" height="31"/>
                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                 <color key="textColor" systemColor="systemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcn-YF-7sh">
-                                <rect key="frame" x="208" y="0.0" width="46" height="34"/>
+                                <rect key="frame" x="208" y="0.0" width="46" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="Vv0-bA-OgU"/>
                                     <constraint firstAttribute="height" constant="46" id="rB8-oS-GBp"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="suit.heart.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="onDrawSceneTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vIh-RY-oXa"/>
+                                    <action selector="heartAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cW8-ua-tMj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,6 +73,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="animalImage" destination="zmC-Rj-YHn" id="eCz-a8-hy3"/>
+                <outlet property="heartButton" destination="Pcn-YF-7sh" id="caf-c6-lm8"/>
                 <outlet property="predictionLabel" destination="HKB-Jv-wS3" id="QOw-XM-VEq"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="113.83928571428571"/>
@@ -80,7 +81,7 @@
     </objects>
     <resources>
         <image name="Group 1 (2)" width="1170" height="2532"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

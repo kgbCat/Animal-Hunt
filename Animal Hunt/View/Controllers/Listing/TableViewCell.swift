@@ -14,6 +14,7 @@ protocol TableViewCellDelegate: AnyObject {
 final class TableViewCell: UITableViewCell {
 
     weak var delegate: TableViewCellDelegate?
+    private var touches = 0
 
     //MARK: IBOutlets
     @IBOutlet weak var animalImage: UIImageView! {
@@ -24,11 +25,13 @@ final class TableViewCell: UITableViewCell {
     }
     @IBOutlet weak var predictionLabel: UILabel!
 
+    @IBOutlet weak var heartButton: UIButton!
 
-    @IBAction func onDrawSceneTapped(_ sender: UIButton) {
-        if let delegate = delegate {
-            delegate.onDrawingScene()
-        }
+
+
+    @IBAction func heartAction(_ sender: UIButton) {
+
+        didTapOnHeart()
     }
 
 
@@ -41,4 +44,26 @@ final class TableViewCell: UITableViewCell {
             }
         }
     }
+    private func didTapOnHeart() {
+        if touches == 0 {
+            animateHeart()
+            heartButton.setImage( UIImage( systemName: "suit.heart.fill" ), for: .normal )
+            heartButton.tintColor = .systemRed
+            touches += 1
+        } else {
+            animateHeart()
+            heartButton.setImage( UIImage( systemName: "suit.heart" ), for: .selected )
+            heartButton.tintColor = .white
+            touches = 0
+        }
+    }
+
+    private func animateHeart() {
+        UIView.transition(with: heartButton,
+                          duration: 0.9,
+                          options: [.transitionFlipFromLeft]){
+
+        }
+    }
+
 }

@@ -10,7 +10,6 @@ import UIKit
 final class ListViewController: UIViewController, TableViewCellDelegate {
 
     // MARK: Private properties
-    private let coreData = CoreDataHelper()
     private var presenter: ListPresenter?
     private var animals:[Animal] = []
     private let cellID = String(describing: TableViewCell.self)
@@ -66,7 +65,7 @@ extension ListViewController: UITableViewDataSource {
 
     func onDrawingScene() {
         // TODO:
-        // do something with like button 
+        // do something with like button
 
     }
 }

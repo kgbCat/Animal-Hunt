@@ -22,9 +22,17 @@ class PhotoViewController: UIViewController {
 
     // MARK: Main storyboard outlets
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var predictionLabel: UILabel!
 
-    @IBOutlet weak var retakePictureBtn: UIButton!
+    @IBOutlet weak var addToLIstBtn: UIButton! {
+        didSet {
+            addToLIstBtn.superview?.isHidden = true
+        }
+    }
+    @IBOutlet weak var retakePictureBtn: UIButton!  {
+        didSet {
+            retakePictureBtn.superview?.isHidden = true
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +46,7 @@ class PhotoViewController: UIViewController {
     }
 
     @IBAction func addDataList(_ sender: UIButton) {
-        presenter?.addToDatabase(name.uppercased(), imageView.image)
+        presenter?.addToDatabase(name, imageView.image)
         presentAlert()
     }
 
@@ -76,14 +84,16 @@ extension PhotoViewController {
 
     /// Updates the storyboard's prediction label.
     func updatePredictionLabel(_ message: String) {
-        DispatchQueue.main.async {            self.predictionLabel.text = message
+        DispatchQueue.main.async {
+            self.navigationItem.title = message.uppercased()
+            self.name = message.uppercased()
         }
 
         if firstRun {
             DispatchQueue.main.async {
                 self.firstRun = false
-                self.predictionLabel.superview?.isHidden = false
                 self.retakePictureBtn.superview?.isHidden = false
+                self.addToLIstBtn.superview?.isHidden = false
             }
         }
     }
@@ -137,7 +147,7 @@ extension PhotoViewController {
             if let firstComma = name.firstIndex(of: ",") {
                 name = String(name.prefix(upTo: firstComma))
             }
-            self.name = name
+//            self.name = name
 
             return "\(name) - \(prediction.confidencePercentage)%"
             
