@@ -13,6 +13,7 @@ class CanvasView: UIView {
     var strokeWidth: CGFloat = 1.0
     var strokeOpacity: CGFloat = 1.0
     var strokeColor: UIColor = .black
+    private var coreData = CoreDataHelper()
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -47,7 +48,6 @@ class CanvasView: UIView {
         lastPoint.opacity = strokeOpacity
         lines.append(lastPoint)
         setNeedsDisplay()
-
     }
 
     func clearCanvas() {
@@ -60,5 +60,25 @@ class CanvasView: UIView {
             lines.removeLast()
             setNeedsDisplay()
         }
+    }
+    
+    func takeScreenshot() -> UIImage {
+             // Begin context
+          UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+             // Draw view in that context
+             drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+             // get image
+         let image = UIGraphicsGetImageFromCurrentImageContext()
+             UIGraphicsEndImageContext()
+
+             if (image != nil) {
+                 return image!
+             }
+             return UIImage()
+         }
+
+    func save(_ animal: Animal, _ image: UIImage) {
+        
+        coreData.addDrawing(animal, image)
     }
 }

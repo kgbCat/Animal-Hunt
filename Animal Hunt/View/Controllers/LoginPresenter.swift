@@ -7,13 +7,15 @@
 
 import UIKit
 
-class LoginPresenter {
+class LoginPresenter: UIViewController {
 
     private let coreData = CoreDataHelper()
 
-    public func checkUser(word: String) -> User?{
-        coreData.getUser(secretWord: word)
-
+    public func checkUser(word: String) -> Bool {
+        if coreData.getUser(secretWord: word) != nil {
+            return true
+        }
+        return false
     }
 
     public func buttonIsdesabled( button: UIButton) {
@@ -26,5 +28,9 @@ class LoginPresenter {
         button.backgroundColor = .systemPink
     }
 
-
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

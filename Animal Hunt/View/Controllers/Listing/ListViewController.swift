@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ListViewController: UIViewController, TableViewCellDelegate {
+final class ListViewController: UIViewController {
 
     // MARK: Private properties
     private var presenter: ListPresenter?
@@ -24,7 +24,7 @@ final class ListViewController: UIViewController, TableViewCellDelegate {
     }
 
 
-    // MARK: Lifecycles
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = ListPresenter()
@@ -40,9 +40,11 @@ final class ListViewController: UIViewController, TableViewCellDelegate {
 
     // MARK: Private Methods
     private func getItems() {
-        self.animals = presenter?.getAnimals(Secret.shared.user ) ?? [Animal]()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        if let animals = presenter?.getAnimals() {
+            self.animals = animals
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -59,14 +61,7 @@ extension ListViewController: UITableViewDataSource {
         else { return UITableViewCell() }
 
         cell.configure(animal: animals[indexPath.row])
-        cell.delegate = self
         return cell
-    }
-
-    func onDrawingScene() {
-        // TODO:
-        // do something with like button
-
     }
 }
 
@@ -74,6 +69,7 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController else { return }
+        drawingViewController.animal = animals[indexPath.row]
 
         navigationController?.pushViewController(drawingViewController, animated: true)
     }

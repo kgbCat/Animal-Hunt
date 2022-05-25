@@ -12,6 +12,7 @@ final class DrawingViewController: UIViewController {
 
     private let colors: [UIColor] = [.red, .blue, .brown, .green, .black, .yellow, .cyan, .orange, .purple]
     let cellId = "cell"
+    var animal = Animal()
 
 
     @IBOutlet weak var canvasView: CanvasView!
@@ -23,7 +24,6 @@ final class DrawingViewController: UIViewController {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        // Do any additional setup after loading the view.
     }
 
 
@@ -45,7 +45,9 @@ final class DrawingViewController: UIViewController {
     }
 
     @IBAction func saveTapped(_ sender: UIButton) {
-        // save to data base
+
+        let image = canvasView.takeScreenshot()
+        canvasView.save(animal, image)
     }
 
 }
@@ -58,8 +60,8 @@ extension DrawingViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         if let view = cell.viewWithTag(1) {
-            view.backgroundColor = colors[indexPath.row]
-            view.layer.cornerRadius = 3
+            view.backgroundColor = self.colors[indexPath.row]
+            self.view.layer.cornerRadius = view.frame.size.height / 2
         }
         return cell
     }
@@ -67,6 +69,4 @@ extension DrawingViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         canvasView.strokeColor = colors[indexPath.row]
     }
-
-
 }

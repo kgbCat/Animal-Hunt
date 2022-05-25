@@ -13,9 +13,10 @@ class PhotoPresenter {
 
     func addToDatabase(_ name: String?, _ image: UIImage?) {
         guard let name = name,
-              let pngImage = image?.pngData()
+              let pngImage = image?.pngData(),
+              let user = coreData.getUser(secretWord: Secret.shared.secretWord)
         else { return }
         coreData
-            .createAnimal(name: name, image: pngImage, user: Secret.shared.user)
+            .createAnimal(name: name, image: pngImage, user: user)
     }
 }

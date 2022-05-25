@@ -13,13 +13,18 @@ class ListPresenter: UIViewController {
 
     func addToDatabase(_ name: String?, _ image: UIImage?) {
         guard let name = name,
-              let pngImage = image?.pngData()
+              let pngImage = image?.pngData(),
+              let user = coreData.getUser(secretWord: Secret.shared.secretWord)
         else { return }
         coreData
-            .createAnimal(name: name, image: pngImage, user: Secret.shared.user)
+            .createAnimal(name: name, image: pngImage, user: user)
     }
-    func getAnimals(_ user: User) -> [Animal] {
-        return coreData.getAnimals(user: user) ?? [Animal]()
+    func getAnimals() -> [Animal] {
+        var animals = [Animal]()
+        if let user = coreData.getUser(secretWord: Secret.shared.secretWord) {
+            animals = coreData.getAnimals(user: user) ?? [Animal]()
+        }
+        return animals
     }
     func deleteAnimal(_ item:  Animal) {
         coreData.deleteItem(item: item)

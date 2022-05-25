@@ -16,10 +16,11 @@
 		0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */; };
 		0A3A8C97282CA7B10053FBB5 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C95282CA7B10053FBB5 /* CoreData.xcdatamodeld */; };
 		0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */; };
-		0A79161A282F95C100672F11 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791616282F95C100672F11 /* User+CoreDataClass.swift */; };
-		0A79161B282F95C100672F11 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791617282F95C100672F11 /* User+CoreDataProperties.swift */; };
-		0A79161C282F95C100672F11 /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791618282F95C100672F11 /* Animal+CoreDataClass.swift */; };
-		0A79161D282F95C100672F11 /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A791619282F95C100672F11 /* Animal+CoreDataProperties.swift */; };
+		0AA0D438283B6A4800CC40AE /* ArtViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */; };
+		0AA0D445283E0D4000CC40AE /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */; };
+		0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */; };
+		0AA0D447283E0D4000CC40AE /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D443283E0D4000CC40AE /* User+CoreDataClass.swift */; };
+		0AA0D448283E0D4000CC40AE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D444283E0D4000CC40AE /* User+CoreDataProperties.swift */; };
 		0AC434B12821D986001EE75F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434AF2821D986001EE75F /* TableViewCell.swift */; };
 		0AC434B22821D986001EE75F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC434B02821D986001EE75F /* TableViewCell.xib */; };
 		0AC434B42821DE0A001EE75F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434B32821DE0A001EE75F /* Secret.swift */; };
@@ -57,10 +58,11 @@
 		0A3A8C93282C8BAC0053FBB5 /* PhotoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPresenter.swift; sourceTree = "<group>"; };
 		0A3A8C96282CA7B10053FBB5 /* Animal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Animal.xcdatamodel; sourceTree = "<group>"; };
 		0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		0A791616282F95C100672F11 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0A791617282F95C100672F11 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		0A791618282F95C100672F11 /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
-		0A791619282F95C100672F11 /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewPresenter.swift; sourceTree = "<group>"; };
+		0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0AA0D443283E0D4000CC40AE /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0AA0D444283E0D4000CC40AE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0AC434AF2821D986001EE75F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0AC434B02821D986001EE75F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		0AC434B32821DE0A001EE75F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
@@ -124,10 +126,10 @@
 		0A3A8C9C282CB3B40053FBB5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				0A791616282F95C100672F11 /* User+CoreDataClass.swift */,
-				0A791617282F95C100672F11 /* User+CoreDataProperties.swift */,
-				0A791618282F95C100672F11 /* Animal+CoreDataClass.swift */,
-				0A791619282F95C100672F11 /* Animal+CoreDataProperties.swift */,
+				0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */,
+				0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */,
+				0AA0D443283E0D4000CC40AE /* User+CoreDataClass.swift */,
+				0AA0D444283E0D4000CC40AE /* User+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 			children = (
 				0AC451BE283793BB0099F0BE /* ArtViewController.swift */,
 				0AC451C128379C1E0099F0BE /* ArtCollectionViewCell.swift */,
+				0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */,
 			);
 			path = Art;
 			sourceTree = "<group>";
@@ -342,21 +345,22 @@
 				0AC77E0E281B868B006657ED /* PhotoViewController+CameraPicker.swift in Sources */,
 				0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */,
 				0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */,
+				0AA0D448283E0D4000CC40AE /* User+CoreDataProperties.swift in Sources */,
 				0AC451BA28351DE20099F0BE /* List Presenter.swift in Sources */,
 				0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */,
 				0A3A8C94282C8BAC0053FBB5 /* PhotoPresenter.swift in Sources */,
 				0AC451C228379C1E0099F0BE /* ArtCollectionViewCell.swift in Sources */,
 				0AC77E02281B2DE8006657ED /* DrawingViewController.swift in Sources */,
+				0AA0D447283E0D4000CC40AE /* User+CoreDataClass.swift in Sources */,
 				0AE8168328322F8000E0E2F1 /* Constants.swift in Sources */,
 				0A3A8C8A282C8B400053FBB5 /* RegisterPresenter.swift in Sources */,
 				0A0A34D62830F17E00CC2308 /* ProfileViewController+CameraPicker.swift in Sources */,
+				0AA0D445283E0D4000CC40AE /* Animal+CoreDataClass.swift in Sources */,
+				0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */,
 				0AC77DE22818E0DB006657ED /* AppDelegate.swift in Sources */,
 				0AC434B42821DE0A001EE75F /* Secret.swift in Sources */,
 				0AC451BF283793BB0099F0BE /* ArtViewController.swift in Sources */,
 				0AC434B12821D986001EE75F /* TableViewCell.swift in Sources */,
-				0A79161B282F95C100672F11 /* User+CoreDataProperties.swift in Sources */,
-				0A79161D282F95C100672F11 /* Animal+CoreDataProperties.swift in Sources */,
-				0A79161C282F95C100672F11 /* Animal+CoreDataClass.swift in Sources */,
 				0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */,
 				0AC451B5283355C50099F0BE /* Touch.swift in Sources */,
 				0AC77DFC2819F5EC006657ED /* RegisterViewController.swift in Sources */,
@@ -366,12 +370,12 @@
 				0A3A8C8C282C8B4E0053FBB5 /* LoginPresenter.swift in Sources */,
 				0AC77DFA2819F5C5006657ED /* LoginViewController.swift in Sources */,
 				0AC77DF828190148006657ED /* ListViewController.swift in Sources */,
-				0A79161A282F95C100672F11 /* User+CoreDataClass.swift in Sources */,
 				0A3A8C92282C8B900053FBB5 /* ProfilePresenter.swift in Sources */,
 				0A3A8C90282C8B7F0053FBB5 /* DrawingPresenter.swift in Sources */,
 				0AC77E06281B42C7006657ED /* Prediction.swift in Sources */,
 				0A3A8C97282CA7B10053FBB5 /* CoreData.xcdatamodeld in Sources */,
 				0A0A34D32830A69900CC2308 /* RegisterViewController+CameraPicker.swift in Sources */,
+				0AA0D438283B6A4800CC40AE /* ArtViewPresenter.swift in Sources */,
 				0AC77DE42818E0DB006657ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

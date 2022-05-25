@@ -8,7 +8,7 @@
 import UIKit
 
 
-class RegisterPrsenter: UIViewController{
+final class RegisterPrsenter: UIViewController{
 
     private let coreData = CoreDataHelper()
 
@@ -46,4 +46,11 @@ class RegisterPrsenter: UIViewController{
         image.layer.borderColor = UIColor.white.cgColor
     }
 
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    
 }

@@ -130,4 +130,14 @@ extension CoreDataHelper {
             // error
         }
     }
+
+    func addDrawing(_ animal: Animal, _ image: UIImage) {
+        animal.drawing = image.pngData()
+
+        do {
+            try context.save()
+        } catch {
+            // error
+        }
+    }
 }

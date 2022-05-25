@@ -12,27 +12,17 @@ import Vision
 class PhotoViewController: UIViewController {
 
     var presenter: PhotoPresenter?
-
     /// A predictor instance that uses Vision and Core ML to generate prediction strings from a photo.
     let imagePredictor = ImagePredictor()
     /// The largest number of predictions the main view controller displays the user.
     let predictionsToShow = 2
-    var firstRun = true
     var name = String()
 
     // MARK: Main storyboard outlets
     @IBOutlet weak var imageView: UIImageView!
 
-    @IBOutlet weak var addToLIstBtn: UIButton! {
-        didSet {
-            addToLIstBtn.superview?.isHidden = true
-        }
-    }
-    @IBOutlet weak var retakePictureBtn: UIButton!  {
-        didSet {
-            retakePictureBtn.superview?.isHidden = true
-        }
-    }
+    @IBOutlet weak var addToLIstBtn: UIButton!
+    @IBOutlet weak var retakePictureBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,14 +78,6 @@ extension PhotoViewController {
             self.navigationItem.title = message.uppercased()
             self.name = message.uppercased()
         }
-
-        if firstRun {
-            DispatchQueue.main.async {
-                self.firstRun = false
-                self.retakePictureBtn.superview?.isHidden = false
-                self.addToLIstBtn.superview?.isHidden = false
-            }
-        }
     }
     /// Notifies the view controller when a user selects a photo in the camera picker or photo library picker.
     /// - Parameter photo: A photo from the camera or photo library.
@@ -129,9 +111,7 @@ extension PhotoViewController {
             updatePredictionLabel("No predictions. (Check console log.)")
             return
         }
-
         let formattedPredictions = formatPredictions(predictions)
-
         let predictionString = formattedPredictions.joined(separator: "\n")
         updatePredictionLabel(predictionString)
     }
@@ -147,12 +127,8 @@ extension PhotoViewController {
             if let firstComma = name.firstIndex(of: ",") {
                 name = String(name.prefix(upTo: firstComma))
             }
-//            self.name = name
-
             return "\(name) - \(prediction.confidencePercentage)%"
-            
         }
-
         return topPredictions
     }
 }

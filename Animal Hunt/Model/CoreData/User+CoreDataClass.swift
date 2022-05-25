@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  Animal Hunt
 //
-//  Created by Anna Delova on 5/14/22.
+//  Created by Anna Delova on 5/25/22.
 //
 //
 

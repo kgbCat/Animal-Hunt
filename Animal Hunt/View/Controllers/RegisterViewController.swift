@@ -8,13 +8,12 @@
 import UIKit
 
 
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
 
 
     //MARK: Private Properties
     var presenter: RegisterPrsenter?
 
-    var isFilled = false
 
     //MARK: IBOutlets
     @IBOutlet weak var profileImageView: UIImageView!
@@ -27,34 +26,29 @@ class RegisterViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.setHidesBackButton(true, animated: true);
         presenter = RegisterPrsenter()
         configureTextFields()
         presenter?.setProfileImageView(image: profileImageView)
         presenter?.buttonIsdesabled(button: createButton)
     }
 
+    //MARK: IBActions
     @IBAction func didTapImageView(_ sender: UITapGestureRecognizer) {
         self.launchCamera()
     }
 
-    //MARK: - IBActions
     @IBAction func didTapCreate(_ sender: UIButton) {
         self.registerNewHunter()
     }
 
+
     //MARK: - Private Methods
-
     private func registerNewHunter() {
-
         guard let name = nameTextField.text,
               let word = secretWordTextField.text,
               let goal =  goalTextField.text,
               let photo = profileImageView.image
         else {
-            DispatchQueue.main.async {
-                self.showAlert()
-            }
             return
         }
         presenter?.registerNewHunter(name: name, word: word, goal: goal, photo: photo)
@@ -72,26 +66,12 @@ class RegisterViewController: UIViewController {
 
     func userSelectedPhoto(photo: UIImage) {
         updateImage(photo)
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.saveImage(photo)
-        }
     }
 
     private func updateImage(_ image: UIImage) {
         DispatchQueue.main.async {
             self.profileImageView.image = image
         }
-    }
-
-    private func saveImage(_ image: UIImage) {
-        // save to core data
-        print("saved")
-    }
-    
-    private func showAlert(message: String = "We really need this info  for your Hunter ID") {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -111,14 +91,20 @@ extension RegisterViewController: UITextFieldDelegate {
         default:
             textField.becomeFirstResponder()
         }
-        if !(presenter?.isFormFilled(textfields: [nameTextField, secretWordTextField, goalTextField]) == nil ){
-            // alert
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard
+            nameTextField.text != "", secretWordTextField.text != "",
+            goalTextField.text != ""
+        else {
+            return
         }
         DispatchQueue.main.async {
             self.presenter?.buttonIsEnabled(button: self.createButton)
 
         }
-        return true
     }
 
     private func configureTextFields() {

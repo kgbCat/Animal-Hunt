@@ -6,15 +6,25 @@
 //
 
 import Foundation
+import UIKit
 
 class Secret {
     
-    static let shared = Secret(user: User())
+    
+    static let shared = Secret(secretWord: String())
 
-    var user: User
+    var secretWord: String
 
-    private init(user: User) {
-        self.user = user
+    private init(secretWord: String) {
+        self.secretWord = secretWord
+    }
+
+    func deleteSecret() {
+        secretWord = String()
+    }
+
+    func updateSecret(_ newWord: String) {
+        secretWord = newWord
     }
 
 }

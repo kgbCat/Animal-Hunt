@@ -7,14 +7,11 @@
 
 import UIKit
 
-protocol TableViewCellDelegate: AnyObject {
-    func onDrawingScene()
-}
-
 final class TableViewCell: UITableViewCell {
 
-    weak var delegate: TableViewCellDelegate?
+    // MARK: Private properties
     private var touches = 0
+
 
     //MARK: IBOutlets
     @IBOutlet weak var animalImage: UIImageView! {
@@ -24,7 +21,6 @@ final class TableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var predictionLabel: UILabel!
-
     @IBOutlet weak var heartButton: UIButton!
 
 
@@ -37,12 +33,12 @@ final class TableViewCell: UITableViewCell {
 
     func configure(animal: Animal) {
         predictionLabel.text = animal.name
-        // convert binary to image
-        if let imgdData = animal.image {
-            if let image = UIImage(data: imgdData) {
-                animalImage.image? = image
-            }
-        }
+        animalImage.image = UIImage(data: animal.image)
+//        if let imgdData = animal.image {
+//            if let image = UIImage(data: animal.image) {
+//                animalImage.image? = image
+//            }
+//        }
     }
     private func didTapOnHeart() {
         if touches == 0 {
