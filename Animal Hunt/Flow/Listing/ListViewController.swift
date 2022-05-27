@@ -10,7 +10,7 @@ import UIKit
 final class ListViewController: UIViewController {
 
     // MARK: Private properties
-    private var presenter: ListPresenter?
+    private let presenter = ListPresenter()
     private var animals:[Animal] = []
     private let cellID = String(describing: TableViewCell.self)
 
@@ -27,7 +27,6 @@ final class ListViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = ListPresenter()
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -40,11 +39,9 @@ final class ListViewController: UIViewController {
 
     // MARK: Private Methods
     private func getItems() {
-        if let animals = presenter?.getAnimals() {
-            self.animals = animals
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        self.animals = presenter.getAnimals()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
 }
@@ -68,7 +65,7 @@ extension ListViewController: UITableViewDataSource {
     //MARK: UITableViewDelegate
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController else { return }
+        guard let drawingViewController = storyboard?.instantiateViewController(withIdentifier: Constants.drawingViewController) as? DrawingViewController else { return }
         drawingViewController.animal = animals[indexPath.row]
 
         navigationController?.pushViewController(drawingViewController, animated: true)
@@ -90,7 +87,7 @@ extension ListViewController: UITableViewDelegate {
         }
 
         delete.backgroundColor = .systemRed
-        delete.image = UIImage(named: "icons8-bull-64")
+        delete.image = UIImage(named: Constants.bull)
 
         // Edit action
         let edit = UIContextualAction(style: .normal,
@@ -100,7 +97,7 @@ extension ListViewController: UITableViewDelegate {
         }
 
         edit.backgroundColor = .systemGreen
-        edit.image  = UIImage(named: "abstract-1313")
+        edit.image  = UIImage(named: "icons8-chimpanzee-64")
 
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
 
@@ -113,9 +110,9 @@ extension ListViewController {
 
     private func handleMovetoDelete(item: Animal) {
         // alert ( Are you sure you want to delete it? You can not restore it back)
-        guard let alert = presenter?.presentDeleteAlert() else { return }
+        let alert = presenter.presentDeleteAlert()
         alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] _ in
-            self?.presenter?.deleteAnimal(item)
+            self?.presenter.deleteAnimal(item)
             self?.getItems()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -124,8 +121,7 @@ extension ListViewController {
 
     private func handleMovetoEdit(item: Animal) {
         // alert to edit name
-        guard let alert = presenter?.presentEditAlert() else { return }
-
+        let alert = presenter.presentEditAlert()
         alert.addTextField()
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak self] _ in
@@ -135,13 +131,11 @@ extension ListViewController {
             else {
                 return
             }
-            self?.presenter?.updateAnimal(item: item, newName: name)
+            self?.presenter.updateAnimal(item: item, newName: name)
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
                 }
         }))
         present(alert, animated: true)
-
     }
-
 }

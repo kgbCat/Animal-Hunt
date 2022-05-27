@@ -10,9 +10,8 @@ import UIKit
 
 final class RegisterViewController: UIViewController {
 
-
     //MARK: Private Properties
-    var presenter: RegisterPrsenter?
+    private let presenter = RegisterPrsenter()
 
 
     //MARK: IBOutlets
@@ -26,12 +25,11 @@ final class RegisterViewController: UIViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = RegisterPrsenter()
         configureTextFields()
-        presenter?.setProfileImageView(image: profileImageView)
-        presenter?.buttonIsdesabled(button: createButton)
+        presenter.setProfileImageView(image: profileImageView)
     }
 
+    
     //MARK: IBActions
     @IBAction func didTapImageView(_ sender: UITapGestureRecognizer) {
         self.launchCamera()
@@ -44,14 +42,25 @@ final class RegisterViewController: UIViewController {
 
     //MARK: - Private Methods
     private func registerNewHunter() {
-        guard let name = nameTextField.text,
-              let word = secretWordTextField.text,
-              let goal =  goalTextField.text,
-              let photo = profileImageView.image
-        else {
-            return
+        if presenter.isFormFilled(textfields: [nameTextField, secretWordTextField, goalTextField]) {
+            guard
+                let name = nameTextField.text,
+                let word = secretWordTextField.text,
+                let goal =  goalTextField.text,
+                let photo = profileImageView.image
+            else {
+                return
+            }
+            presenter.registerNewHunter(name: name, word: word, goal: goal, photo: photo)
+
+            DispatchQueue.main.async {
+                self.presenter.showAlert(message: Constants.newUserSaved, controller: self)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.presenter.showAlert(message: Constants.fillItUp, controller: self)
+            }
         }
-        presenter?.registerNewHunter(name: name, word: word, goal: goal, photo: photo)
     }
 
     private func launchCamera() {
@@ -95,16 +104,7 @@ extension RegisterViewController: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard
-            nameTextField.text != "", secretWordTextField.text != "",
-            goalTextField.text != ""
-        else {
-            return
-        }
-        DispatchQueue.main.async {
-            self.presenter?.buttonIsEnabled(button: self.createButton)
-
-        }
+  
     }
 
     private func configureTextFields() {

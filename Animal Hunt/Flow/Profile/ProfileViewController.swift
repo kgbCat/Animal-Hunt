@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+final class ProfileViewController: UIViewController {
 
-    var presenter: ProfilePresenter?
+    private let presenter = ProfilePresenter()
 
     //MARK: -IBOutlets
     @IBOutlet weak var profilePhoto: UIImageView!
@@ -29,12 +29,11 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = ProfilePresenter()
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        presenter?.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
+        presenter.setUserInfo(profilePhoto, nameLabel, goalLbl, numOfAnimalsCoughtLbl)
     }
 
     // MARK: -IBActions
@@ -52,23 +51,21 @@ class ProfileViewController: UIViewController {
               let photo = profilePhoto.image
         else {
             DispatchQueue.main.async {
-                self.presenter?.showAlert(message: "You haven't changed anything yet.")
+                self.presenter.showAlert(message: "You haven't changed anything yet.", controller: self)
             }
             return
         }
         DispatchQueue.main.async {
-            self.presenter?.showAlert(message: "Saved Bro")
+            self.presenter.showAlert(message: "Saved...Bro", controller: self)
         }
         DispatchQueue.global(qos: .userInitiated).async {
-            self.presenter?.saveToCoreData(photo, word, goal, name)
+            self.presenter.saveToCoreData(photo, word, goal, name)
         }
     }
 
     @IBAction func signOutTapped(_ sender: UIBarButtonItem) {
         Secret.shared.deleteSecret()
-        // unwind for login
-
-        
+        self.dismiss(animated: true, completion: nil)
     }
 
     private func launchCamera() {
@@ -103,7 +100,6 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let new = newSecretWordTxtFld.text {
             Secret.shared.updateSecret(new)
-//            presenter?.buttonIsEnabled(button: saveButton)
         }
     }
 

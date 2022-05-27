@@ -12,7 +12,7 @@ class ArtViewController: UIViewController {
     //MARK: - Private properties
     private var presenter: ArtViewPresenter?
     private var art = [UIImage]()
-    private let cellId = "artCell"
+    private let cellId = Constants.artCollectionCell
 
 
     //MARK: -IBOulets
@@ -34,9 +34,9 @@ class ArtViewController: UIViewController {
         getArts()
     }
 
+
     //MARK: -Private  methods
     private func getArts() {
-
         if let art = presenter?.getArts() {
             self.art = art
             DispatchQueue.main.async {

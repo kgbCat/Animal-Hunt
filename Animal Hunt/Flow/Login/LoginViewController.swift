@@ -7,10 +7,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
-    var presenter = LoginPresenter()
+    //MARK: Private Properties
+    private let presenter = LoginPresenter()
 
+    //MARK: IBOutlets
     @IBOutlet weak var secretWordTxtFld: UITextField! {
         didSet {
             configureTextFields()
@@ -21,30 +23,25 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        presenter = LoginPresenter()
-//        presenter.buttonIsdesabled(button: huntButton)
     }
 
-
+    
+    //MARK: IBActions
     @IBAction func didTapHunt(_ sender: UIButton) {
         guard let secretWord = secretWordTxtFld.text else { return }
         if presenter.checkUser(word: secretWord) {
             Secret.shared.secretWord = secretWord
             secretWordTxtFld.text = ""
-            performSegue(withIdentifier: "onTabBar", sender: sender)
+            performSegue(withIdentifier: Constants.onTabBar, sender: sender)
         } else {
-            DispatchQueue.main.async {
-                self.presenter.showAlert(message: "Buddy, you did it wrong. Try again!")
-                self.secretWordTxtFld.text = ""
-//                self.presenter?.buttonIsdesabled(button: self.huntButton)
-            }
+            self.presenter.showAlert( controller: self)
+            self.secretWordTxtFld.text = ""
         }
     }
 
     @IBAction func goToRegister(_ sender: UIButton) {
-        performSegue(withIdentifier: "onRegister", sender: sender)
+        performSegue(withIdentifier: Constants.onRegister, sender: sender)
     }
-
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -55,9 +52,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        if isFormFilled() {
-//            presenter?.buttonIsEnabled(button: huntButton)
-//        }
+
     }
 
     private func configureTextFields() {
@@ -65,11 +60,5 @@ extension LoginViewController: UITextFieldDelegate {
         secretWordTxtFld?.returnKeyType = .done
         secretWordTxtFld?.autocapitalizationType = .words
         secretWordTxtFld?.autocorrectionType = .no
-    }
-    private func isFormFilled() -> Bool {
-        guard
-            secretWordTxtFld.text != ""
-        else { return false }
-        return true
     }
 }

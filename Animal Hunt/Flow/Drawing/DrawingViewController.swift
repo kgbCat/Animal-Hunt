@@ -9,14 +9,13 @@ import UIKit
 
 final class DrawingViewController: UIViewController {
 
-
+    //MARK: Private Properties
     private let colors: [UIColor] = [.red, .blue, .brown, .green, .black, .yellow, .cyan, .orange, .purple]
-    let cellId = "cell"
+    private let cellId = Constants.collectionViewCell
     var animal = Animal()
 
-
+    //MARK: IBOutlets
     @IBOutlet weak var canvasView: CanvasView!
-
     @IBOutlet weak var collectionView: UICollectionView!
 
 
@@ -26,7 +25,7 @@ final class DrawingViewController: UIViewController {
         collectionView.dataSource = self
     }
 
-
+    //MARK: IBActions
     @IBAction func undoBtnTapped(_ sender: UIButton) {
         canvasView.unDo()
     }
@@ -45,7 +44,6 @@ final class DrawingViewController: UIViewController {
     }
 
     @IBAction func saveTapped(_ sender: UIButton) {
-
         let image = canvasView.takeScreenshot()
         canvasView.save(animal, image)
     }

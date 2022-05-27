@@ -6,15 +6,10 @@
 //
 
 import Foundation
-import UIKit
 
 class Secret {
-    
-    
     static let shared = Secret(secretWord: String())
-
     var secretWord: String
-
     private init(secretWord: String) {
         self.secretWord = secretWord
     }
@@ -26,5 +21,4 @@ class Secret {
     func updateSecret(_ newWord: String) {
         secretWord = newWord
     }
-
 }

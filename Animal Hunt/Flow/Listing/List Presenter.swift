@@ -34,14 +34,13 @@ class ListPresenter: UIViewController {
     }
 
     func presentEditAlert() -> UIAlertController {
-        return UIAlertController(title: "New Name",
-                                 message: "Enter new name",
-                                 preferredStyle: .alert)
+        return UIAlertController( title: nil, message: "Enter new name",
+                                  preferredStyle: .alert)
     }
 
     func presentDeleteAlert() -> UIAlertController {
         return UIAlertController(title: nil,
-                                 message: "Are you sure you want to delete it? You can not restore it back",
+                                 message: Constants.deleteMessage,
                                  preferredStyle: .alert)
     }
 }

@@ -26,7 +26,6 @@ final class TableViewCell: UITableViewCell {
 
 
     @IBAction func heartAction(_ sender: UIButton) {
-
         didTapOnHeart()
     }
 
@@ -34,21 +33,16 @@ final class TableViewCell: UITableViewCell {
     func configure(animal: Animal) {
         predictionLabel.text = animal.name
         animalImage.image = UIImage(data: animal.image)
-//        if let imgdData = animal.image {
-//            if let image = UIImage(data: animal.image) {
-//                animalImage.image? = image
-//            }
-//        }
     }
     private func didTapOnHeart() {
         if touches == 0 {
             animateHeart()
-            heartButton.setImage( UIImage( systemName: "suit.heart.fill" ), for: .normal )
+            heartButton.setImage( UIImage( systemName: Constants.heartFilled), for: .normal )
             heartButton.tintColor = .systemRed
             touches += 1
         } else {
             animateHeart()
-            heartButton.setImage( UIImage( systemName: "suit.heart" ), for: .selected )
+            heartButton.setImage( UIImage( systemName: Constants.heart ), for: .selected )
             heartButton.tintColor = .white
             touches = 0
         }

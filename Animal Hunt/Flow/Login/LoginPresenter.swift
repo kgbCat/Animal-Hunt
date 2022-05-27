@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginPresenter: UIViewController {
+final class LoginPresenter: UIViewController {
 
     private let coreData = CoreDataHelper()
 
@@ -18,19 +18,9 @@ class LoginPresenter: UIViewController {
         return false
     }
 
-    public func buttonIsdesabled( button: UIButton) {
-        button.isEnabled = false
-        button.backgroundColor = .systemBlue
-    }
-
-    public func buttonIsEnabled( button: UIButton) {
-        button.isEnabled = true
-        button.backgroundColor = .systemPink
-    }
-
-    func showAlert(message: String) {
+    func showAlert(message: String = Constants.wrongSecret, controller: UIViewController) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        controller.present(alert, animated: true, completion: nil)
     }
 }

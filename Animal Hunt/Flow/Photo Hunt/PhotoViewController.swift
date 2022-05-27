@@ -9,9 +9,9 @@ import UIKit
 import CoreML
 import Vision
 
-class PhotoViewController: UIViewController {
+final class PhotoViewController: UIViewController {
 
-    var presenter: PhotoPresenter?
+    let presenter = PhotoPresenter()
     /// A predictor instance that uses Vision and Core ML to generate prediction strings from a photo.
     let imagePredictor = ImagePredictor()
     /// The largest number of predictions the main view controller displays the user.
@@ -26,7 +26,6 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = PhotoPresenter()
         launchCamera()
 
     }
@@ -36,12 +35,12 @@ class PhotoViewController: UIViewController {
     }
 
     @IBAction func addDataList(_ sender: UIButton) {
-        presenter?.addToDatabase(name, imageView.image)
+        presenter.addToDatabase(name, imageView.image)
         presentAlert()
     }
 
     private func presentAlert() {
-        let alert = UIAlertController(title: nil, message: "Added to you Hunt List", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: Constants.addedToList , preferredStyle: .alert)
         DispatchQueue.main.async {
             self.present(alert, animated: true)
         }

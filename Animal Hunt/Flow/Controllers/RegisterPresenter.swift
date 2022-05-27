@@ -18,16 +18,6 @@ final class RegisterPrsenter: UIViewController{
         }
     }
 
-    public func buttonIsdesabled( button: UIButton) {
-        button.isEnabled = false
-        button.backgroundColor = .systemBlue
-    }
-
-    public func buttonIsEnabled( button: UIButton) {
-        button.isEnabled = true
-        button.backgroundColor = .systemPink
-    }
-
     public func isFormFilled(textfields: [UITextField] )-> Bool {
         var isFilled = true
         textfields.forEach({ textfield in
@@ -39,17 +29,17 @@ final class RegisterPrsenter: UIViewController{
     }
 
     public func setProfileImageView(image: UIImageView) {
-        image.image = UIImage(named: "icons8-профиль-кошки-100")
+        image.image = UIImage(named: Constants.defaultAvatar)
         image.layer.cornerRadius = image.frame.size.height / 2
         image.clipsToBounds = true
         image.layer.borderWidth =  2.0
         image.layer.borderColor = UIColor.white.cgColor
     }
 
-    func showAlert(message: String) {
+    func showAlert(message: String, controller: UIViewController ) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        controller.present(alert, animated: true, completion: nil)
     }
 
     

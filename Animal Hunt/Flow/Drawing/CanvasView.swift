@@ -7,12 +7,13 @@
 
 import UIKit
 
-class CanvasView: UIView {
+final class CanvasView: UIView {
 
     var lines = [Touch]()
     var strokeWidth: CGFloat = 1.0
     var strokeOpacity: CGFloat = 1.0
     var strokeColor: UIColor = .black
+
     private var coreData = CoreDataHelper()
 
     override func draw(_ rect: CGRect) {
@@ -78,7 +79,6 @@ class CanvasView: UIView {
          }
 
     func save(_ animal: Animal, _ image: UIImage) {
-        
         coreData.addDrawing(animal, image)
     }
 }

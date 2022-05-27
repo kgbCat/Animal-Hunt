@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PhotoPresenter {
+final class PhotoPresenter {
     private let coreData = CoreDataHelper()
 
     func addToDatabase(_ name: String?, _ image: UIImage?) {
