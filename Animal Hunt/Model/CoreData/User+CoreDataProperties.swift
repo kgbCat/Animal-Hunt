@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.swift
 //  Animal Hunt
 //
-//  Created by Anna Delova on 5/14/22.
+//  Created by Anna Delova on 5/25/22.
 //
 //
 
@@ -17,9 +17,9 @@ extension User {
     }
 
     @NSManaged public var avatar: Data?
-    @NSManaged public var goal: String?
-    @NSManaged public var name: String?
-    @NSManaged public var secretWord: String?
+    @NSManaged public var goal: String
+    @NSManaged public var name: String
+    @NSManaged public var secretWord: String
     @NSManaged public var animals: NSSet?
 
 }
