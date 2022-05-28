@@ -59,7 +59,7 @@ extension DrawingViewController: UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
         if let view = cell.viewWithTag(1) {
             view.backgroundColor = self.colors[indexPath.row]
-            self.view.layer.cornerRadius = view.frame.size.height / 2
+            view.layer.cornerRadius = 12
         }
         return cell
     }

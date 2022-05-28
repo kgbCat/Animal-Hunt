@@ -20,6 +20,8 @@ class Constants {
     static let deleteMessage = "Are you sure you want to delete it? You can not restore it back"
     static let fillItUp = "You shoud fill it up completly to become a real hunter."
     static let newUserSaved = "Congratulations, now you can Hunt. Swipe screen down to sign in."
+    static let noChangesBeenMade = "No changes have been made."
+    static let saveChangedData = "Ok, got it."
 
     // MARK: Images
 
@@ -27,6 +29,8 @@ class Constants {
     static let bull = "icons8-bull-64"
     static let heart = "suit.heart"
     static let heartFilled = "suit.heart.fill"
+    static let defaultArt = "art cell (1)"
+    static let letsHunt = "animal cell (1)"
 
     // MARK: Storyboard identifier
 

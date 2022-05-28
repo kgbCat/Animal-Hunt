@@ -10,7 +10,7 @@ import UIKit
 class ArtViewController: UIViewController {
 
     //MARK: - Private properties
-    private var presenter: ArtViewPresenter?
+    private var presenter = ArtViewPresenter()
     private var art = [UIImage]()
     private let cellId = Constants.artCollectionCell
 
@@ -37,14 +37,15 @@ class ArtViewController: UIViewController {
 
     //MARK: -Private  methods
     private func getArts() {
-        if let art = presenter?.getArts() {
+        if let art = presenter.getArts() {
             self.art = art
+            if art.count == 0 {
+                self.art.append(UIImage(named: Constants.defaultArt) ?? UIImage())
+            }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
-
-            //TODO: pesent image and message ( No art has been made)
     }
 }
 

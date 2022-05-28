@@ -43,23 +43,30 @@ final class ProfileViewController: UIViewController {
 
     @IBAction func saveBtnTapped(_ sender: UIButton) {
 
-        // TODO: save to  data base, reload, show alert
+        if newSecretWordTxtFld.text != "" {
 
-        guard let name = nameLabel.text,
-              let word = newSecretWordTxtFld.text,
-              let goal =  goalLbl.text,
-              let photo = profilePhoto.image
-        else {
-            DispatchQueue.main.async {
-                self.presenter.showAlert(message: "You haven't changed anything yet.", controller: self)
+            guard let name = nameLabel.text,
+                  let word = newSecretWordTxtFld.text,
+                  let goal =  goalLbl.text,
+                  let photo = profilePhoto.image
+            else { return }
+
+            DispatchQueue.global(qos: .userInitiated).async {
+                self.presenter.saveToCoreData(photo, word, goal, name)
+                Secret.shared.updateSecret(word)
+                //TODO: bug doesnt save new secet
             }
-            return
-        }
-        DispatchQueue.main.async {
-            self.presenter.showAlert(message: "Saved...Bro", controller: self)
-        }
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.presenter.saveToCoreData(photo, word, goal, name)
+
+            DispatchQueue.main.async {
+                self.presenter.showAlert(message: Constants.saveChangedData, controller: self)
+                self.newSecretWordTxtFld.text = ""
+            }
+
+        } else {
+
+            DispatchQueue.main.async {
+                self.presenter.showAlert(message: Constants.noChangesBeenMade, controller: self)
+            }
         }
     }
 
@@ -98,9 +105,7 @@ extension ProfileViewController: UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if let new = newSecretWordTxtFld.text {
-            Secret.shared.updateSecret(new)
-        }
+
     }
 
 }
