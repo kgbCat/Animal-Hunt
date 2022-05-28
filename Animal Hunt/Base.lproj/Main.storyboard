@@ -391,13 +391,13 @@
                                                     <constraint firstAttribute="height" constant="30" id="m1g-eN-1eo"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Reset" cornerStyle="large">
+                                                <buttonConfiguration key="configuration" style="plain" title="Clear" cornerStyle="large">
                                                     <backgroundConfiguration key="background" strokeWidth="1">
-                                                        <color key="strokeColor" systemColor="systemBlueColor"/>
+                                                        <color key="strokeColor" systemColor="systemBackgroundColor"/>
                                                     </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
-                                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="resetTapped:" destination="Fqg-Te-I5C" eventType="touchUpInside" id="0dz-bs-neh"/>

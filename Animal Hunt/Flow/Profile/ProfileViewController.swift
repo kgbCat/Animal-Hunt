@@ -51,11 +51,8 @@ final class ProfileViewController: UIViewController {
                   let photo = profilePhoto.image
             else { return }
 
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.presenter.saveToCoreData(photo, word, goal, name)
-                Secret.shared.updateSecret(word)
-                //TODO: bug doesnt save new secet
-            }
+            presenter.saveToCoreData(photo, word, goal, name)
+            Secret.shared.updateSecret(word)
 
             DispatchQueue.main.async {
                 self.presenter.showAlert(message: Constants.saveChangedData, controller: self)

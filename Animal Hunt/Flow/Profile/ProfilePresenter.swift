@@ -27,9 +27,10 @@ final class ProfilePresenter: UIViewController {
     func saveToCoreData(_ image: UIImage, _ word: String, _ goal: String, _ name: String) {
         guard
             let imgData = image.pngData(),
-            let user = coreData.getUser(secretWord: word)
+            let user = coreData.getUser(secretWord: Secret.shared.secretWord)
         else { return }
         coreData.updateUser(user: user, newName: name, newSecretWord: word, newGoal: goal, newAvatar: imgData)
+        print(user)
     }
 
     func showAlert(message: String, controller: UIViewController ) {

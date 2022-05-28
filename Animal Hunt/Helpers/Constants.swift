@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Constants {
+final class Constants {
     // MARK: Segue identifier
 
     static let onTabBar = "onTabBar"
@@ -22,6 +22,7 @@ class Constants {
     static let newUserSaved = "Congratulations, now you can Hunt. Swipe screen down to sign in."
     static let noChangesBeenMade = "No changes have been made."
     static let saveChangedData = "Ok, got it."
+    static let addToGallery = "Added to your art gallery"
 
     // MARK: Images
 
@@ -31,6 +32,7 @@ class Constants {
     static let heartFilled = "suit.heart.fill"
     static let defaultArt = "art cell (1)"
     static let letsHunt = "animal cell (1)"
+    static let monkey = "icons8-chimpanzee-64"
 
     // MARK: Storyboard identifier
 

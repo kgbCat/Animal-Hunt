@@ -90,7 +90,7 @@ extension ListViewController: UITableViewDelegate {
             completionHandler(true)
         }
 
-        delete.backgroundColor = .systemRed
+        delete.backgroundColor = UIColor.deleteColor
         delete.image = UIImage(named: Constants.bull)
 
         // Edit action
@@ -100,8 +100,8 @@ extension ListViewController: UITableViewDelegate {
             completionHandler(true)
         }
 
-        edit.backgroundColor = .systemGreen
-        edit.image  = UIImage(named: "icons8-chimpanzee-64")
+        edit.backgroundColor =  UIColor.editColor
+        edit.image  = UIImage(named: Constants.monkey)
 
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
 
