@@ -88,18 +88,8 @@ final class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case nameTextField:
-            secretWordTextField.becomeFirstResponder()
-            nameTextField.resignFirstResponder()
-        case secretWordTextField:
-            goalTextField.becomeFirstResponder()
-            secretWordTextField.resignFirstResponder()
-        case goalTextField:
-            goalTextField.resignFirstResponder()
-        default:
-            textField.becomeFirstResponder()
-        }
+        textField.resignFirstResponder()
+
         return true
     }
 

@@ -62,6 +62,7 @@ extension ListViewController: UITableViewDataSource {
         else { return UITableViewCell() }
 
         cell.configure(animal: animals[indexPath.row])
+        
         return cell
     }
 }
