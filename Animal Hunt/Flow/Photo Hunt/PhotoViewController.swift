@@ -20,7 +20,6 @@ final class PhotoViewController: UIViewController {
 
     // MARK: Main storyboard outlets
     @IBOutlet weak var imageView: UIImageView!
-
     @IBOutlet weak var addToLIstBtn: UIButton!
     @IBOutlet weak var retakePictureBtn: UIButton!
 

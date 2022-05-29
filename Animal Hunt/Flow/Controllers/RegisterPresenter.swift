@@ -13,7 +13,7 @@ final class RegisterPrsenter: UIViewController{
     private let coreData = CoreDataHelper()
 
     public func registerNewHunter(name: String, word: String, goal: String, photo: UIImage ) {
-        if let imgData = photo.pngData() {
+        if let imgData = photo.jpegData(compressionQuality: 1) {
             coreData.createUser(name: name, secretWord: word, goal: goal, avatar: imgData)
         }
     }
