@@ -33,6 +33,8 @@ final class Constants {
     static let defaultArt = "art cell (1)"
     static let letsHunt = "animal cell (1)"
     static let monkey = "icons8-chimpanzee-64"
+    static let pencil = "pencil.tip"
+    static let arrow = "cursorarrow.motionlines"
 
     // MARK: Storyboard identifier
 
@@ -42,4 +44,9 @@ final class Constants {
 
     static let collectionViewCell = "cell"
     static let artCollectionCell = "artCell"
+
+    // MARK: Size
+
+    static let canvasWidth = 768
+    static let canvasOverscrollHight = 500
 }

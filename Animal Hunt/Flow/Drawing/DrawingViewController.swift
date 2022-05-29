@@ -6,72 +6,72 @@
 //
 
 import UIKit
+import PencilKit
 
 final class DrawingViewController: UIViewController {
 
-    //MARK: Private Properties
-    private let colors: [UIColor] = [.red, .blue, .brown, .green, .black, .yellow, .cyan, .orange, .purple]
-    private let cellId = Constants.collectionViewCell
     var animal = Animal()
+    private let  presenter = DrawingPresenter()
+
+    lazy var toolPicker: PKToolPicker = {
+       let toolPicker = PKToolPicker()
+        toolPicker.addObserver(self)
+        return toolPicker
+    }()
 
     //MARK: IBOutlets
-    @IBOutlet weak var canvasView: CanvasView!
-    @IBOutlet weak var collectionView: UICollectionView!
-
+    @IBOutlet weak var canvasView: PKCanvasView!
+    @IBOutlet weak var drawingPolicyButton: UIBarButtonItem! {
+        didSet {
+            drawingPolicyButton.title = "Draw"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        canvasView.delegate = self
+        canvasView.drawingPolicy = .default
+
+        toolPicker.setVisible(true, forFirstResponder: canvasView)
+        toolPicker.addObserver(canvasView)
+        canvasView.becomeFirstResponder()
     }
+
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        view.addSubview(canvasView)
+        presenter.setScale(canvasView)
+    }
+
 
     //MARK: IBActions
-    @IBAction func undoBtnTapped(_ sender: UIButton) {
-        canvasView.unDo()
+
+    @IBAction func moveTapped(_ sender: UIBarButtonItem) {
+        if canvasView.drawingPolicy == .pencilOnly {
+            canvasView.drawingPolicy = .default
+            drawingPolicyButton.title = "Draw"
+
+        } else {
+            canvasView.drawingPolicy = .pencilOnly
+            drawingPolicyButton.title = "Move"
+
+        }
     }
 
-    @IBAction func widthSliderChanched(_ sender: UISlider) {
-        canvasView.strokeWidth = CGFloat(sender.value)
-
+    @IBAction func saveTapped(_ sender: UIBarButtonItem) {
+        let image = presenter.takeScreenshot(canvasView)
+        presenter.save(animal, image)
+        presenter.showAlert(message: Constants.addToGallery, self)
     }
 
-    @IBAction func opacitySliderChanged(_ sender: UISlider) {
-        canvasView.strokeOpacity = CGFloat(sender.value)
+    override var prefersHomeIndicatorAutoHidden: Bool {
+        return true
     }
-
-    @IBAction func resetTapped(_ sender: UIButton) {
-        canvasView.clearCanvas()
-    }
-
-    @IBAction func saveTapped(_ sender: UIButton) {
-        let image = canvasView.takeScreenshot()
-        canvasView.save(animal, image)
-        showAlert(message: Constants.addToGallery)
-    }
-
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-
 }
 
-extension DrawingViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        colors.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        if let view = cell.viewWithTag(1) {
-            view.backgroundColor = self.colors[indexPath.row]
-            view.layer.cornerRadius = 12
-        }
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        canvasView.strokeColor = colors[indexPath.row]
+extension DrawingViewController: PKCanvasViewDelegate, PKToolPickerObserver {
+    func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
+        presenter.updateContentSizeForDrawing(canvasView)
     }
 }
