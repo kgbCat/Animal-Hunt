@@ -17,6 +17,8 @@
 		0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */; };
 		0A979AAA2841F5450043411D /* UIColor+myColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AA92841F5450043411D /* UIColor+myColors.swift */; };
 		0A979AAC284339890043411D /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AAB284339890043411D /* DrawingPresenter.swift */; };
+		0A979ABB2843ACD50043411D /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979ABA2843ACD50043411D /* LoginTest.swift */; };
+		0A979ACA2843B3820043411D /* RegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AC92843B3820043411D /* RegisterTest.swift */; };
 		0AA0D438283B6A4800CC40AE /* ArtViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */; };
 		0AA0D445283E0D4000CC40AE /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */; };
 		0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */; };
@@ -48,6 +50,23 @@
 		0AE8168328322F8000E0E2F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8168228322F8000E0E2F1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0A979AB52843AAA80043411D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AC77DD62818E0DB006657ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AC77DDD2818E0DB006657ED;
+			remoteInfo = "Animal Hunt";
+		};
+		0A979AC42843B31D0043411D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AC77DD62818E0DB006657ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AC77DDD2818E0DB006657ED;
+			remoteInfo = "Animal Hunt";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A0A34D22830A69900CC2308 /* RegisterViewController+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterViewController+CameraPicker.swift"; sourceTree = "<group>"; };
 		0A0A34D52830F17E00CC2308 /* ProfileViewController+CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileViewController+CameraPicker.swift"; sourceTree = "<group>"; };
@@ -59,6 +78,10 @@
 		0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		0A979AA92841F5450043411D /* UIColor+myColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+myColors.swift"; sourceTree = "<group>"; };
 		0A979AAB284339890043411D /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
+		0A979AB12843AAA80043411D /* Animal HuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Animal HuntTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A979ABA2843ACD50043411D /* LoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
+		0A979AC02843B31D0043411D /* RegisterTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A979AC92843B3820043411D /* RegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTest.swift; sourceTree = "<group>"; };
 		0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewPresenter.swift; sourceTree = "<group>"; };
 		0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -93,6 +116,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A979AAE2843AAA80043411D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A979ABD2843B31D0043411D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AC77DDB2818E0DB006657ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +170,15 @@
 				0AA0D444283E0D4000CC40AE /* User+CoreDataProperties.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0A979AB22843AAA80043411D /* Animal HuntTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A979ABA2843ACD50043411D /* LoginTest.swift */,
+				0A979AC92843B3820043411D /* RegisterTest.swift */,
+			);
+			path = "Animal HuntTests";
 			sourceTree = "<group>";
 		};
 		0AA76D71283E646A00500EAD /* Login */ = {
@@ -205,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC77DE02818E0DB006657ED /* Animal Hunt */,
+				0A979AB22843AAA80043411D /* Animal HuntTests */,
 				0AC77DDF2818E0DB006657ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -213,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC77DDE2818E0DB006657ED /* Animal Hunt.app */,
+				0A979AB12843AAA80043411D /* Animal HuntTests.xctest */,
+				0A979AC02843B31D0043411D /* RegisterTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,6 +331,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A979AB02843AAA80043411D /* Animal HuntTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A979AB92843AAA80043411D /* Build configuration list for PBXNativeTarget "Animal HuntTests" */;
+			buildPhases = (
+				0A979AAD2843AAA80043411D /* Sources */,
+				0A979AAE2843AAA80043411D /* Frameworks */,
+				0A979AAF2843AAA80043411D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A979AB62843AAA80043411D /* PBXTargetDependency */,
+			);
+			name = "Animal HuntTests";
+			productName = "Animal HuntTests";
+			productReference = 0A979AB12843AAA80043411D /* Animal HuntTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0A979ABF2843B31D0043411D /* RegisterTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A979AC62843B31D0043411D /* Build configuration list for PBXNativeTarget "RegisterTest" */;
+			buildPhases = (
+				0A979ABC2843B31D0043411D /* Sources */,
+				0A979ABD2843B31D0043411D /* Frameworks */,
+				0A979ABE2843B31D0043411D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A979AC52843B31D0043411D /* PBXTargetDependency */,
+			);
+			name = RegisterTest;
+			productName = RegisterTest;
+			productReference = 0A979AC02843B31D0043411D /* RegisterTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0AC77DDD2818E0DB006657ED /* Animal Hunt */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AC77DF22818E0DC006657ED /* Build configuration list for PBXNativeTarget "Animal Hunt" */;
@@ -306,9 +391,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					0A979AB02843AAA80043411D = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 0AC77DDD2818E0DB006657ED;
+					};
+					0A979ABF2843B31D0043411D = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 0AC77DDD2818E0DB006657ED;
+					};
 					0AC77DDD2818E0DB006657ED = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
@@ -328,11 +421,27 @@
 			projectRoot = "";
 			targets = (
 				0AC77DDD2818E0DB006657ED /* Animal Hunt */,
+				0A979AB02843AAA80043411D /* Animal HuntTests */,
+				0A979ABF2843B31D0043411D /* RegisterTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0A979AAF2843AAA80043411D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A979ABE2843B31D0043411D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AC77DDC2818E0DB006657ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,6 +456,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A979AAD2843AAA80043411D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A979ACA2843B3820043411D /* RegisterTest.swift in Sources */,
+				0A979ABB2843ACD50043411D /* LoginTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A979ABC2843B31D0043411D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AC77DDA2818E0DB006657ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,6 +516,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0A979AB62843AAA80043411D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AC77DDD2818E0DB006657ED /* Animal Hunt */;
+			targetProxy = 0A979AB52843AAA80043411D /* PBXContainerItemProxy */;
+		};
+		0A979AC52843B31D0043411D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AC77DDD2818E0DB006657ED /* Animal Hunt */;
+			targetProxy = 0A979AC42843B31D0043411D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0AC77DE72818E0DB006657ED /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -411,6 +549,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0A979AB72843AAA80043411D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZHUTRQ83V7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kgbCat.Animal-HuntTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animal Hunt.app/Animal Hunt";
+			};
+			name = Debug;
+		};
+		0A979AB82843AAA80043411D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZHUTRQ83V7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kgbCat.Animal-HuntTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animal Hunt.app/Animal Hunt";
+			};
+			name = Release;
+		};
+		0A979AC72843B31D0043411D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZHUTRQ83V7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kgbCat.RegisterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animal Hunt.app/Animal Hunt";
+			};
+			name = Debug;
+		};
+		0A979AC82843B31D0043411D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZHUTRQ83V7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kgbCat.RegisterTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animal Hunt.app/Animal Hunt";
+			};
+			name = Release;
+		};
 		0AC77DF02818E0DC006657ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -590,6 +804,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A979AB92843AAA80043411D /* Build configuration list for PBXNativeTarget "Animal HuntTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A979AB72843AAA80043411D /* Debug */,
+				0A979AB82843AAA80043411D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A979AC62843B31D0043411D /* Build configuration list for PBXNativeTarget "RegisterTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A979AC72843B31D0043411D /* Debug */,
+				0A979AC82843B31D0043411D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0AC77DD92818E0DB006657ED /* Build configuration list for PBXProject "Animal Hunt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
