@@ -64,13 +64,8 @@ final class RegisterViewController: UIViewController {
     }
 
     private func launchCamera() {
+        present(photoPicker, animated: false)
 
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            present(photoPicker, animated: false)
-            return
-        }
-
-        present(cameraPicker, animated: false)
     }
 
     func userSelectedPhoto(photo: UIImage) {

@@ -10,6 +10,7 @@ import UIKit
 final class ProfileViewController: UIViewController {
 
     private let presenter = ProfilePresenter()
+    private var isApdated = false
 
     //MARK: -IBOutlets
     @IBOutlet weak var profilePhoto: UIImageView!
@@ -43,24 +44,25 @@ final class ProfileViewController: UIViewController {
 
     @IBAction func saveBtnTapped(_ sender: UIButton) {
 
-        if newSecretWordTxtFld.text != "" {
-
-            guard let name = nameLabel.text,
-                  let word = newSecretWordTxtFld.text,
-                  let goal =  goalLbl.text,
-                  let photo = profilePhoto.image
-            else { return }
-
-            presenter.saveToCoreData(photo, word, goal, name)
-            Secret.shared.updateSecret(word)
-
-            DispatchQueue.main.async {
-                self.presenter.showAlert(message: Constants.saveChangedData, controller: self)
-                self.newSecretWordTxtFld.text = ""
+        if isApdated {
+            if let photo = profilePhoto.image {
+                presenter.updatePhoto(photo, nameLabel.text, goalLbl.text, newSecretWordTxtFld.text)
+                DispatchQueue.main.async {
+                    self.presenter.showAlert(message: Constants.saveChangedData, controller: self)
+                }
             }
-
-        } else {
-
+        }
+        if newSecretWordTxtFld.text != "" {
+            if let word = newSecretWordTxtFld.text,
+               let photo = profilePhoto.image {
+                presenter.updateSecret(photo, nameLabel.text, goalLbl.text, word)
+                DispatchQueue.main.async {
+                    self.presenter.showAlert(message: Constants.saveChangedData, controller: self)
+                }
+                Secret.shared.updateSecret(word)
+            }
+        }
+        if !(isApdated && newSecretWordTxtFld.text != "") {
             DispatchQueue.main.async {
                 self.presenter.showAlert(message: Constants.noChangesBeenMade, controller: self)
             }
@@ -73,13 +75,8 @@ final class ProfileViewController: UIViewController {
     }
 
     private func launchCamera() {
+        present(photoPicker, animated: false)
 
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
-            present(photoPicker, animated: false)
-            return
-        }
-
-        present(cameraPicker, animated: false)
     }
 
     func userSelectedPhoto(photo: UIImage) {
@@ -89,9 +86,9 @@ final class ProfileViewController: UIViewController {
     private func updateImage(_ image: UIImage) {
         DispatchQueue.main.async {
             self.profilePhoto.image = image
+            self.isApdated = true
         }
     }
-
 }
 
 extension ProfileViewController: UITextFieldDelegate {
@@ -104,5 +101,4 @@ extension ProfileViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
 
     }
-
 }

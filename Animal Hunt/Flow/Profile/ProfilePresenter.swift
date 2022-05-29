@@ -24,9 +24,30 @@ final class ProfilePresenter: UIViewController {
 
     }
 
+    func updatePhoto(_ photo: UIImage, _ name: String?, _ goal: String?, _ word: String?) {
+        guard
+            let imgData = photo.jpegData(compressionQuality: 1),
+            let user = coreData.getUser(secretWord: Secret.shared.secretWord),
+            let name = name,
+            let word = word,
+            let goal = goal
+        else { return }
+        coreData.updateUser(user: user, newName: name, newSecretWord: word, newGoal: goal, newAvatar: imgData)
+    }
+
+    func updateSecret(_ photo: UIImage, _ name: String?, _ goal: String?, _ word: String) {
+        guard
+            let imgData = photo.jpegData(compressionQuality: 1),
+            let user = coreData.getUser(secretWord: Secret.shared.secretWord),
+            let name = name,
+            let goal = goal
+        else { return }
+        coreData.updateUser(user: user, newName: name, newSecretWord: word, newGoal: goal, newAvatar: imgData)
+    }
+
     func saveToCoreData(_ image: UIImage, _ word: String, _ goal: String, _ name: String) {
         guard
-            let imgData = image.pngData(),
+            let imgData = image.jpegData(compressionQuality: 1),
             let user = coreData.getUser(secretWord: Secret.shared.secretWord)
         else { return }
         coreData.updateUser(user: user, newName: name, newSecretWord: word, newGoal: goal, newAvatar: imgData)
