@@ -13,7 +13,7 @@ final class PhotoPresenter {
 
     func addToDatabase(_ name: String?, _ image: UIImage?) {
         guard let name = name,
-              let pngImage = image?.pngData(),
+              let pngImage = image?.jpegData(compressionQuality: 1),
               let user = coreData.getUser(secretWord: Secret.shared.secretWord)
         else { return }
         coreData
