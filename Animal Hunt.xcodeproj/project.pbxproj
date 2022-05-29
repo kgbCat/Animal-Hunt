@@ -16,6 +16,7 @@
 		0A3A8C97282CA7B10053FBB5 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C95282CA7B10053FBB5 /* CoreData.xcdatamodeld */; };
 		0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */; };
 		0A979AAA2841F5450043411D /* UIColor+myColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AA92841F5450043411D /* UIColor+myColors.swift */; };
+		0A979AAC284339890043411D /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AAB284339890043411D /* DrawingPresenter.swift */; };
 		0AA0D438283B6A4800CC40AE /* ArtViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */; };
 		0AA0D445283E0D4000CC40AE /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */; };
 		0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */; };
@@ -24,7 +25,6 @@
 		0AC434B12821D986001EE75F /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434AF2821D986001EE75F /* TableViewCell.swift */; };
 		0AC434B22821D986001EE75F /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AC434B02821D986001EE75F /* TableViewCell.xib */; };
 		0AC434B42821DE0A001EE75F /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC434B32821DE0A001EE75F /* Secret.swift */; };
-		0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451AF2833554A0099F0BE /* CanvasView.swift */; };
 		0AC451B5283355C50099F0BE /* Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451B4283355C50099F0BE /* Touch.swift */; };
 		0AC451BA28351DE20099F0BE /* List Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451B928351DE20099F0BE /* List Presenter.swift */; };
 		0AC451BF283793BB0099F0BE /* ArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC451BE283793BB0099F0BE /* ArtViewController.swift */; };
@@ -58,6 +58,7 @@
 		0A3A8C96282CA7B10053FBB5 /* Animal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Animal.xcdatamodel; sourceTree = "<group>"; };
 		0A3A8C9D282CDA840053FBB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		0A979AA92841F5450043411D /* UIColor+myColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+myColors.swift"; sourceTree = "<group>"; };
+		0A979AAB284339890043411D /* DrawingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingPresenter.swift; sourceTree = "<group>"; };
 		0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewPresenter.swift; sourceTree = "<group>"; };
 		0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		0AC434AF2821D986001EE75F /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0AC434B02821D986001EE75F /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		0AC434B32821DE0A001EE75F /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		0AC451AF2833554A0099F0BE /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		0AC451B4283355C50099F0BE /* Touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touch.swift; sourceTree = "<group>"; };
 		0AC451B928351DE20099F0BE /* List Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "List Presenter.swift"; sourceTree = "<group>"; };
 		0AC451BE283793BB0099F0BE /* ArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewController.swift; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC77E01281B2DE8006657ED /* DrawingViewController.swift */,
-				0AC451AF2833554A0099F0BE /* CanvasView.swift */,
+				0A979AAB284339890043411D /* DrawingPresenter.swift */,
 			);
 			path = Drawing;
 			sourceTree = "<group>";
@@ -354,7 +354,6 @@
 				0AC77E0E281B868B006657ED /* PhotoViewController+CameraPicker.swift in Sources */,
 				0AC77DE62818E0DB006657ED /* PhotoViewController.swift in Sources */,
 				0A979AAA2841F5450043411D /* UIColor+myColors.swift in Sources */,
-				0AC451B02833554A0099F0BE /* CanvasView.swift in Sources */,
 				0AA0D448283E0D4000CC40AE /* User+CoreDataProperties.swift in Sources */,
 				0AC451BA28351DE20099F0BE /* List Presenter.swift in Sources */,
 				0AC77E04281B2E27006657ED /* SqueezeNet.mlmodel in Sources */,
@@ -369,6 +368,7 @@
 				0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */,
 				0AC77DE22818E0DB006657ED /* AppDelegate.swift in Sources */,
 				0AC434B42821DE0A001EE75F /* Secret.swift in Sources */,
+				0A979AAC284339890043411D /* DrawingPresenter.swift in Sources */,
 				0AC451BF283793BB0099F0BE /* ArtViewController.swift in Sources */,
 				0AC434B12821D986001EE75F /* TableViewCell.swift in Sources */,
 				0A3A8C9E282CDA840053FBB5 /* CoreDataHelper.swift in Sources */,
