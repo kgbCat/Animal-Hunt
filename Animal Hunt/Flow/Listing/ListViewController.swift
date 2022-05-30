@@ -39,10 +39,12 @@ final class ListViewController: UIViewController {
 
     // MARK: Private Methods
     private func getItems() {
-        self.animals = presenter.getAnimals()
+        animals = presenter.getAnimals()
         if animals.count == 0 {
             tableView.backgroundView = UIImageView(image: UIImage(named: Constants.letsHunt))
             tableView.backgroundView?.contentMode = .scaleAspectFit
+        } else {
+            tableView.backgroundView = .none
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()

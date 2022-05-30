@@ -40,7 +40,11 @@ class ArtViewController: UIViewController {
         if let art = presenter.getArts() {
             self.art = art
             if art.count == 0 {
-                self.art.append(UIImage(named: Constants.defaultArt) ?? UIImage())
+                collectionView.backgroundView  = UIImageView(image: UIImage(named: Constants.defaultArt))
+
+                collectionView.backgroundView?.contentMode = .scaleAspectFit
+            } else {
+                collectionView.backgroundView  = .none
             }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()

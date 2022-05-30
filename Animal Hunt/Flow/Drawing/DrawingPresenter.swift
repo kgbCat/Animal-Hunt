@@ -21,7 +21,8 @@ class DrawingPresenter {
 
         if !drawing.bounds.isNull {
 
-            contentHeight = max(canvasView.bounds.height, (drawing.bounds.maxY + canvasOverscrollHight) * canvasView.zoomScale)
+            contentHeight = canvasView.bounds.height
+//            contentHeight = max(canvasView.bounds.height, (drawing.bounds.maxY + canvasOverscrollHight) * canvasView.zoomScale)
         } else {
             contentHeight = canvasView.bounds.height
         }

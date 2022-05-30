@@ -18,7 +18,6 @@
 		0A979AAA2841F5450043411D /* UIColor+myColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AA92841F5450043411D /* UIColor+myColors.swift */; };
 		0A979AAC284339890043411D /* DrawingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AAB284339890043411D /* DrawingPresenter.swift */; };
 		0A979ABB2843ACD50043411D /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979ABA2843ACD50043411D /* LoginTest.swift */; };
-		0A979ACA2843B3820043411D /* RegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A979AC92843B3820043411D /* RegisterTest.swift */; };
 		0AA0D438283B6A4800CC40AE /* ArtViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */; };
 		0AA0D445283E0D4000CC40AE /* Animal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */; };
 		0AA0D446283E0D4000CC40AE /* Animal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */; };
@@ -81,7 +80,6 @@
 		0A979AB12843AAA80043411D /* Animal HuntTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Animal HuntTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A979ABA2843ACD50043411D /* LoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
 		0A979AC02843B31D0043411D /* RegisterTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A979AC92843B3820043411D /* RegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTest.swift; sourceTree = "<group>"; };
 		0AA0D437283B6A4800CC40AE /* ArtViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewPresenter.swift; sourceTree = "<group>"; };
 		0AA0D441283E0D4000CC40AE /* Animal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0AA0D442283E0D4000CC40AE /* Animal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animal+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				0A979ABA2843ACD50043411D /* LoginTest.swift */,
-				0A979AC92843B3820043411D /* RegisterTest.swift */,
 			);
 			path = "Animal HuntTests";
 			sourceTree = "<group>";
@@ -460,7 +457,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A979ACA2843B3820043411D /* RegisterTest.swift in Sources */,
 				0A979ABB2843ACD50043411D /* LoginTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
