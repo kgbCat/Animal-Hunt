@@ -21,11 +21,7 @@ final class DrawingViewController: UIViewController {
 
     //MARK: IBOutlets
     @IBOutlet weak var canvasView: PKCanvasView!
-    @IBOutlet weak var drawingPolicyButton: UIBarButtonItem! {
-        didSet {
-            drawingPolicyButton.title = "Draw"
-        }
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,18 +42,6 @@ final class DrawingViewController: UIViewController {
 
 
     //MARK: IBActions
-
-    @IBAction func moveTapped(_ sender: UIBarButtonItem) {
-        if canvasView.drawingPolicy == .pencilOnly {
-            canvasView.drawingPolicy = .default
-            drawingPolicyButton.title = "Draw"
-
-        } else {
-            canvasView.drawingPolicy = .pencilOnly
-            drawingPolicyButton.title = "Move"
-
-        }
-    }
 
     @IBAction func saveTapped(_ sender: UIBarButtonItem) {
         let image = presenter.takeScreenshot(canvasView)

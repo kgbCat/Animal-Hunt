@@ -385,24 +385,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="v8B-fK-Lf4">
                         <barButtonItem key="backBarButtonItem" title=" " id="UaG-jD-rLd"/>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Draw" width="60" id="xJJ-Ak-VjD">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="moveTapped:" destination="Fqg-Te-I5C" id="HkJ-Sd-Ed1"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="save" id="QDl-UF-z9A">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="saveTapped:" destination="Fqg-Te-I5C" id="Mn5-Vs-BlJ"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="QDl-UF-z9A">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="saveTapped:" destination="Fqg-Te-I5C" id="Mn5-Vs-BlJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="canvasView" destination="iIo-gf-07S" id="jU7-Nm-vTZ"/>
-                        <outlet property="drawingPolicyButton" destination="xJJ-Ak-VjD" id="9Js-Od-G23"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HxW-bp-3Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -720,7 +711,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6j-rl-yBr">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q6j-rl-yBr">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="300"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
